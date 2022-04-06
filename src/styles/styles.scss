@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
 $gunmetal: #202c39ff;
 $gunmetal-2: #283845ff;
 $sage: #b8b08dff;
@@ -72,8 +74,10 @@ $gradient-radial: radial-gradient(#202c39ff,
   #f2d492ff,
   #f29559ff);
 
+
 * {
   font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 body {
@@ -87,11 +91,40 @@ main {
   max-width: 800px;
 }
 
+h3 {
+  background-color: $sage;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 0px grey;
+}
+
+.skills,
+.summary,
+.certs,
+.training {
+  background-color: #283845ff;
+  // max-height: 75px;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // padding: 10px;
+  // gap: 10px;
+  color: $deep-champagne;
+  box-shadow: 5px 5px 0px grey;
+  border-radius: 5px;
+  text-shadow: 3px 3px 3px #202c39ff;
+
+  // background-color: $sage;
+  padding: 10px;
+  border-radius: 5px;
+  list-style: none;
+}
+
 img {
   height: auto;
   width: 75px;
   border-radius: 5px;
-  box-shadow:  3px 3px 3px #202c39ff
+  box-shadow: 3px 3px 3px #202c39ff;
 
 }
 
@@ -105,10 +138,10 @@ img {
 
   h4 {
     margin: 0%;
-    
+
   }
 
-  
+
   .jobheader {
     background-color: #283845ff;
     max-height: 75px;
@@ -118,12 +151,12 @@ img {
     padding: 10px;
     gap: 10px;
     box-shadow: 5px 5px 0px grey;
-  border-radius: 5px;
+    border-radius: 5px;
+    text-shadow: 3px 3px 3px #202c39ff;
 
-  text-shadow: 3px 3px 3px #202c39ff ;
-  h4 {
-    color: $deep-champagne;
-  }
+    h4 {
+      color: $deep-champagne;
+    }
 
 
 
@@ -134,11 +167,14 @@ img {
     // border-style: dashed;
     grid-template-columns: 1fr minmax(125px, 150px);
     padding: 10px;
+    color: $gunmetal-2;
+    // border-radius: 5px;
+    font-weight: bold;
 
     h4 {
       display: grid;
       place-items: center;
-      
+
 
     }
 
@@ -167,7 +203,7 @@ img {
 
   img {
 
-    // border-radius: 40%;
+    border-radius: 40%;
     height: 75px;
   }
 
@@ -178,7 +214,7 @@ img {
   align-items: center;
   margin: 10px;
 
-  background-color: #283845ff;
+  background-color: $sage;
 }
 
 .education {
@@ -195,5 +231,5 @@ img {
   justify-content: space-evenly;
   align-items: center;
   margin: 10px;
-  background-color: #283845ff;
+  background-color: $sage;
 }

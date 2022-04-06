@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
 /* SCSS RGB */
 /* SCSS Gradient */
 * {
   font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 body {
@@ -11,6 +13,29 @@ body {
 main {
   margin: auto;
   max-width: 800px;
+}
+
+h3 {
+  background-color: #b8b08d;
+  padding: 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: 5px 5px 0px grey;
+          box-shadow: 5px 5px 0px grey;
+}
+
+.skills,
+.summary,
+.certs,
+.training {
+  background-color: #283845ff;
+  color: #f2d492;
+  -webkit-box-shadow: 5px 5px 0px grey;
+          box-shadow: 5px 5px 0px grey;
+  border-radius: 5px;
+  text-shadow: 3px 3px 3px #202c39ff;
+  padding: 10px;
+  border-radius: 5px;
+  list-style: none;
 }
 
 img {
@@ -62,6 +87,8 @@ img {
   -ms-grid-columns: 1fr minmax(125px, 150px);
       grid-template-columns: 1fr minmax(125px, 150px);
   padding: 10px;
+  color: #283845;
+  font-weight: bold;
 }
 
 .job .jobcontent h4 {
@@ -95,10 +122,11 @@ img {
       -ms-flex-align: center;
           align-items: center;
   margin: 10px;
-  background-color: #283845ff;
+  background-color: #b8b08d;
 }
 
 .military img {
+  border-radius: 40%;
   height: 75px;
 }
 
@@ -115,7 +143,7 @@ img {
       -ms-flex-align: center;
           align-items: center;
   margin: 10px;
-  background-color: #283845ff;
+  background-color: #b8b08d;
 }
 
 .education img {
