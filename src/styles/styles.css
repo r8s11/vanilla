@@ -1,0 +1,125 @@
+/* SCSS RGB */
+/* SCSS Gradient */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f2d492;
+}
+
+main {
+  margin: auto;
+  max-width: 800px;
+}
+
+img {
+  height: auto;
+  width: 75px;
+  border-radius: 5px;
+  -webkit-box-shadow: 3px 3px 3px #202c39ff;
+          box-shadow: 3px 3px 3px #202c39ff;
+}
+
+.job {
+  background-color: #f29559;
+  padding: 0px;
+  margin: 10px;
+  display: -ms-grid;
+  display: grid;
+  min-width: 300px;
+  border-radius: 5px;
+}
+
+.job h4 {
+  margin: 0%;
+}
+
+.job .jobheader {
+  background-color: #283845ff;
+  max-height: 75px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  gap: 10px;
+  -webkit-box-shadow: 5px 5px 0px grey;
+          box-shadow: 5px 5px 0px grey;
+  border-radius: 5px;
+  text-shadow: 3px 3px 3px #202c39ff;
+}
+
+.job .jobheader h4 {
+  color: #f2d492;
+}
+
+.job .jobcontent {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr minmax(125px, 150px);
+      grid-template-columns: 1fr minmax(125px, 150px);
+  padding: 10px;
+}
+
+.job .jobcontent h4 {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.job .jobcontent .desc {
+  min-width: 150px;
+}
+
+.job .jobcontent .tools {
+  min-width: 125px;
+}
+
+.job .jobcontent .tools li {
+  list-style-type: none;
+}
+
+.military {
+  height: 100px;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px;
+  background-color: #283845ff;
+}
+
+.military img {
+  height: 75px;
+}
+
+.education {
+  height: 100px;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px;
+  background-color: #283845ff;
+}
+
+.education img {
+  border-radius: 40%;
+  height: 75px;
+}
+/*# sourceMappingURL=styles.css.map */
