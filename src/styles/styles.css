@@ -95,6 +95,7 @@ img {
   display: -ms-grid;
   display: grid;
   place-items: center;
+  text-decoration: underline;
 }
 
 .job .jobcontent .desc {
@@ -126,7 +127,7 @@ img {
 }
 
 .military img {
-  border-radius: 40%;
+  border-radius: 5px;
   height: 75px;
 }
 
@@ -147,7 +148,7 @@ img {
 }
 
 .education img {
-  border-radius: 40%;
+  border-radius: 5px;
   height: 75px;
 }
 /*# sourceMappingURL=styles.css.map */
