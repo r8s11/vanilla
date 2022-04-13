@@ -1,0 +1,70 @@
+{
+    "jobs": [{
+            "title": "Senior Desktop Support",
+            "company": "Pillar Biosciences",
+            "location": "Natick, MA",
+            "duration": "Feb/2022 - Present",
+            "description": "",
+            "tools": ["a", "b", "c","d"],
+            "logo": ""
+
+        },
+        {
+            "title": "Senior Desktop Support",
+            "company": "Jounce Therapeutics",
+            "location": "Cambridge, MA",
+            "duration": "July/2021 – Feb/2022",
+            "description": "",
+            "tools": [],
+            "logo": ""
+
+        },
+        {
+            "title": "Senior Desktop Support",
+            "company": "Mass General Hospital",
+            "location": "Boston, MA",
+            "duration": "",
+            "description": "",
+            "tools": [],
+            "logo": ""
+        },
+        {
+            "title": "Senior Desktop Support",
+            "company": "Netscout",
+            "location": "",
+            "duration": "",
+            "description": "",
+            "tools": [],
+            "logo": ""
+        },
+        {
+            "title": "Senior Desktop Support",
+            "company": "1Path",
+            "location": "",
+            "duration": "",
+            "description": "",
+            "tools": [],
+            "logo": ""
+        },
+        {
+            "title": "Senior Desktop Support",
+            "company": "G4S",
+            "location": "",
+            "duration": "",
+            "description": "",
+            "tools": "",
+            "logo": ""
+        }
+    ],
+    "skills": [
+        " Microsoft 365",
+        "Microsoft Azure",
+        "Jira Service Management",
+        "ServiceNow",
+        "Network Security",
+        "Superior Customer Service",
+        "Web Development",
+        "Powershell Scripting",
+        "Bilingual(English and Spanish)"
+    ]
+}
