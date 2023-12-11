@@ -80,6 +80,17 @@ $gradient-radial: radial-gradient(#202c39ff,
   font-family: 'Noto Sans', sans-serif;
 }
 
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  
+  img {
+    border-radius: 50%;
+    box-shadow: 1px 1px 10px ;
+  }
+
+}
+
 body {
 
   background-color: $deep-champagne;
