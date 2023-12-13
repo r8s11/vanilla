@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
 
 $gunmetal: #202c39ff;
 $gunmetal-2: #283845ff;
@@ -20,94 +20,129 @@ $deep-champagne: rgba(242, 212, 146, 1);
 $atomic-tangerine: rgba(242, 149, 89, 1);
 
 /* SCSS Gradient */
-$gradient-top: linear-gradient(0deg,
+$gradient-top: linear-gradient(
+  0deg,
   #202c39ff,
   #283845ff,
   #b8b08dff,
   #f2d492ff,
-  #f29559ff);
-$gradient-right: linear-gradient(90deg,
+  #f29559ff
+);
+$gradient-right: linear-gradient(
+  90deg,
   #202c39ff,
   #283845ff,
   #b8b08dff,
   #f2d492ff,
-  #f29559ff);
-$gradient-bottom: linear-gradient(180deg,
+  #f29559ff
+);
+$gradient-bottom: linear-gradient(
+  180deg,
   #202c39ff,
   #283845ff,
   #b8b08dff,
   #f2d492ff,
-  #f29559ff);
-$gradient-left: linear-gradient(270deg,
+  #f29559ff
+);
+$gradient-left: linear-gradient(
+  270deg,
   #202c39ff,
   #283845ff,
   #b8b08dff,
   #f2d492ff,
-  #f29559ff);
-$gradient-top-right: linear-gradient(45deg,
+  #f29559ff
+);
+$gradient-top-right: linear-gradient(
+  45deg,
   #202c39ff,
   #283845ff,
   #b8b08dff,
   #f2d492ff,
-  #f29559ff);
-$gradient-bottom-right: linear-gradient(135deg,
+  #f29559ff
+);
+$gradient-bottom-right: linear-gradient(
+  135deg,
   #202c39ff,
   #283845ff,
   #b8b08dff,
   #f2d492ff,
-  #f29559ff);
-$gradient-top-left: linear-gradient(225deg,
+  #f29559ff
+);
+$gradient-top-left: linear-gradient(
+  225deg,
   #202c39ff,
   #283845ff,
   #b8b08dff,
   #f2d492ff,
-  #f29559ff);
-$gradient-bottom-left: linear-gradient(315deg,
+  #f29559ff
+);
+$gradient-bottom-left: linear-gradient(
+  315deg,
   #202c39ff,
   #283845ff,
   #b8b08dff,
   #f2d492ff,
-  #f29559ff);
-$gradient-radial: radial-gradient(#202c39ff,
+  #f29559ff
+);
+$gradient-radial: radial-gradient(
+  #202c39ff,
   #283845ff,
   #b8b08dff,
   #f2d492ff,
-  #f29559ff);
-
+  #f29559ff
+);
 
 * {
   font-family: Arial, Helvetica, sans-serif;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  
-  img {
-    border-radius: 50%;
-    box-shadow: 1px 1px 10px ;
-  }
+  grid-template-columns: 1fr 2.5fr 1fr;
 
+
+  aside {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    height: 100vh;
+    position: sticky;
+    align-self: start;
+    top: 0;
+    padding: 1rem;
+    
+    img {
+      width: 150px;
+    }
+
+
+    header, h1, p {
+    margin: 0%;
+    padding: 0%;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      text-decoration: none;
+      list-style: none;
+      padding: 0.5rem;
+    }
+
+   
+  }
 }
 
 body {
-
   background-color: $deep-champagne;
-
 }
 
-header {
-background-color: rgb(71, 0, 177);
-margin: 0;
-padding: 0; 
-
-}
 
 main {
   margin: auto;
   max-width: 800px;
- 
 }
 
 h3 {
@@ -144,7 +179,6 @@ img {
   width: 75px;
   border-radius: 5px;
   box-shadow: 3px 3px 3px #202c39ff;
-
 }
 
 .job {
@@ -157,9 +191,7 @@ img {
 
   h4 {
     margin: 0%;
-
   }
-
 
   .jobheader {
     background-color: #283845ff;
@@ -176,9 +208,6 @@ img {
     h4 {
       color: $deep-champagne;
     }
-
-
-
   }
 
   .jobcontent {
@@ -194,8 +223,6 @@ img {
       display: grid;
       place-items: center;
       text-decoration: underline;
-
-
     }
 
     .desc {
@@ -206,23 +233,15 @@ img {
       // border-style: dotted;
       min-width: 125px;
 
-
-
       li {
         list-style-type: none;
       }
     }
-
-
-
   }
-
 }
 
 .military {
-
   img {
-
     border-radius: 5px;
     height: 75px;
   }
@@ -238,9 +257,7 @@ img {
 }
 
 .education {
-
   img {
-
     border-radius: 5px;
     height: 75px;
   }
