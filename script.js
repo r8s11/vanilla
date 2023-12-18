@@ -1,47 +1,50 @@
-import data from './jobs.json' assert {
-    type: "json"
+import data from "./jobs.json" assert { type: "json" };
+
+//selecting the HTML elemtent to insert the data
+let jobs = document.getElementById("jobbox");
+//select skills HTML element to inster skill list
+let skills = document.getElementById("skillbox");
+//It asbstract the job section of the json
+let joblist = data.jobs;
+//It abstract the skill section of the json
+let skilllist = data.skills;
+// for (let x in skilllist) {
+console.log(skills);
+
+console.log(skilllist);
+
+skilllist.forEach((x) => {
+  skills.innerHTML += `<li>${x}</li>`
 }
+  );
 
-
-
-let jobs = document.getElementById("jobList")
-let jobList = data.jobs
-let skilllist = data.skills
-for (let x in skilllist) {
-
-}
-
-
-
-for (let x in jobList) {
-
-    let tools = jobList[x].tools
-    let tool = []
-    for( let i in tools){
-           tool += "<ol>" + tools[i] + "</ol> "
-    }
-   
-    
-    jobs.innerHTML += `<div class="job">
-    <h4 class="desc">
-    ` + jobList[x].title + `
+joblist.forEach((x) => {
+  jobs.innerHTML += `<div class="job">
+  <div class="jobheader">
+   <!-- <img src="" alt="" /> -->
+    <h4>
+      ${x.title}
       <br />
-      ` + jobList[x].company + `
+      ${x.company}
       <br />
-      ` + jobList[x].location + `
+      ${x.location}
       <br />
-      ` + jobList[x].duration + `
+      ${x.duration}
     </h4>
-    <p>
-    <h4>Description</h4>
-
-    </p>
-    <div class="tools">
-      <h4>Tools</h4>        
-      ${tool}
-    </div>
   </div>
-  `
+  <!-- <div class="desc">
+      <h4>Description</h4>
+      <p>
+        ${x.description}
+      </p>
+    </div>
+    <div class="tools">
+      <h4>Tools</h4>
+      <ul>
+        <li>${x.tools}</li>
+      </ul>>
+  </div> -->
+</div>`;
+});
 
-}
-console.log()
+// console.log(jobs);

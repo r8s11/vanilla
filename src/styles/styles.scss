@@ -95,14 +95,19 @@ $gradient-radial: radial-gradient(
 * {
   font-family: Arial, Helvetica, sans-serif;
   font-family: "Noto Sans", sans-serif;
+  
 }
 
 .container {
   display: grid;
   grid-template-columns: 1fr 2.5fr 1fr;
+  margin: 0;
+  background-color: $deep-champagne;
+
 
 
   aside {
+    z-index: -100;
     display: grid;
     align-content: center;
     justify-items: center;
@@ -111,6 +116,8 @@ $gradient-radial: radial-gradient(
     align-self: start;
     top: 0;
     padding: 1rem;
+    margin-right: 1rem;
+    box-shadow: 0px 0px 10px $gunmetal ;
     
     img {
       width: 150px;
@@ -124,6 +131,7 @@ $gradient-radial: radial-gradient(
     ul {
       margin: 0;
       padding: 0;
+      
     }
     li {
       text-decoration: none;
@@ -135,14 +143,15 @@ $gradient-radial: radial-gradient(
   }
 }
 
-body {
-  background-color: $deep-champagne;
-}
+
 
 
 main {
   margin: auto;
   max-width: 800px;
+  top: 0;
+  bottom: 0;
+  
 }
 
 h3 {
@@ -168,7 +177,6 @@ h3 {
   border-radius: 5px;
   text-shadow: 3px 3px 3px #202c39ff;
 
-  // background-color: $sage;
   padding: 10px;
   border-radius: 5px;
   list-style: none;
@@ -269,4 +277,19 @@ img {
   align-items: center;
   margin: 10px;
   background-color: $sage;
+}
+
+.thirdcolumn {
+  z-index: -100;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    height: 100vh;
+    position: sticky;
+    align-self: start;
+    top: 0;
+    bottom: 0;
+    padding: 1rem;
+    margin-left: 1rem;
+    box-shadow: 0px 0px 10px $gunmetal ;
 }
