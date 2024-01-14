@@ -32,7 +32,7 @@ joblist.forEach((x) => {
       ${x.duration}
     </h4>
   </div>
-  <!-- <div class="desc">
+<div class="desc">
       <h4>Description</h4>
       <p>
         ${x.description}
@@ -42,8 +42,8 @@ joblist.forEach((x) => {
       <h4>Tools</h4>
       <ul>
         <li>${x.tools}</li>
-      </ul>>
-  </div> -->
+      </ul>
+  </div>
 </div>`;
 });
 

@@ -5,8 +5,8 @@
       "company": "Foundation Medicine",
       "location":"Cambridge, MA",
       "duration":"Oct 2023 - Present",
-      "description":"",
-      "tools":[]
+      "description":"First line of support for all IT related issues.",
+      "tools":["ServiceNow", "Confluence", "SCCM"]
     
     },
     {
