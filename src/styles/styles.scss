@@ -35,6 +35,50 @@ $gradient-radial: radial-gradient(#202c39ff, #283845ff, #b8b08dff, #f2d492ff, #f
   font-family: "Noto Sans", sans-serif;
 }
 
+//////////////////////
+// Left Column //////
+/////////////////////
+ 
+
+.social a {
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: 0.2rem solid $gunmetal-2;
+  border-radius: 5px;
+  font-size: 2rem;
+  color: $gunmetal-2;
+  margin: 1.5rem 0.75rem 1.5rem;
+  transition: 0.5s ease;
+}
+.social a:hover {
+  background-color: $gunmetal;
+  color: $sage;
+  box-shadow: 0 0 .5rem $gunmetal;
+}
+
+.btn {
+  text-decoration: none;
+  display: inline-block;
+  padding: 1rem;
+  background: $gunmetal-2;
+  border-radius: 5px;
+  box-shadow: 5px 5px 0px $sage;
+  font-size: 1rem;
+  color: $sage;
+  letter-spacing: .1rem;
+  transition: .5s ease;
+
+}
+
+btn:hover {
+  box-shadow: none;
+}
+
 .container {
   display: grid;
   grid-template-columns: 1fr 2.5fr 1fr;
@@ -42,7 +86,6 @@ $gradient-radial: radial-gradient(#202c39ff, #283845ff, #b8b08dff, #f2d492ff, #f
   background-color: $deep-champagne;
 
   aside {
-    z-index: -100;
     display: grid;
     align-content: center;
     justify-items: center;
@@ -76,27 +119,6 @@ $gradient-radial: radial-gradient(#202c39ff, #283845ff, #b8b08dff, #f2d492ff, #f
   }
 }
 
-// Left Column
-
-.social a {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 2rem;
-  height: 2rem;
-  background: transparent;
-  border: 0.2rem solid $gunmetal-2;
-  border-radius: 5px;
-  font-size: 2rem;
-  color: $gunmetal-2;
-  margin: 1.5rem 0.75rem 1.5rem;
-  transition: 0.5 ease;
-}
-.social a:hover {
-  background-color: $gunmetal;
-  color: $atomic-tangerine;
-  box-shadow: 0 0 1rem $gunmetal;
-}
 
 main {
   margin: auto;

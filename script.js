@@ -9,9 +9,9 @@ let joblist = data.jobs;
 //It abstract the skill section of the json
 let skilllist = data.skills;
 // for (let x in skilllist) {
-console.log(skills);
+// console.log(skills);
 
-console.log(skilllist);
+// console.log(skilllist);
 
 skilllist.forEach((x) => {
   skills.innerHTML += `<li>${x}</li>`
