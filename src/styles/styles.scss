@@ -20,82 +20,19 @@ $deep-champagne: rgba(242, 212, 146, 1);
 $atomic-tangerine: rgba(242, 149, 89, 1);
 
 /* SCSS Gradient */
-$gradient-top: linear-gradient(
-  0deg,
-  #202c39ff,
-  #283845ff,
-  #b8b08dff,
-  #f2d492ff,
-  #f29559ff
-);
-$gradient-right: linear-gradient(
-  90deg,
-  #202c39ff,
-  #283845ff,
-  #b8b08dff,
-  #f2d492ff,
-  #f29559ff
-);
-$gradient-bottom: linear-gradient(
-  180deg,
-  #202c39ff,
-  #283845ff,
-  #b8b08dff,
-  #f2d492ff,
-  #f29559ff
-);
-$gradient-left: linear-gradient(
-  270deg,
-  #202c39ff,
-  #283845ff,
-  #b8b08dff,
-  #f2d492ff,
-  #f29559ff
-);
-$gradient-top-right: linear-gradient(
-  45deg,
-  #202c39ff,
-  #283845ff,
-  #b8b08dff,
-  #f2d492ff,
-  #f29559ff
-);
-$gradient-bottom-right: linear-gradient(
-  135deg,
-  #202c39ff,
-  #283845ff,
-  #b8b08dff,
-  #f2d492ff,
-  #f29559ff
-);
-$gradient-top-left: linear-gradient(
-  225deg,
-  #202c39ff,
-  #283845ff,
-  #b8b08dff,
-  #f2d492ff,
-  #f29559ff
-);
-$gradient-bottom-left: linear-gradient(
-  315deg,
-  #202c39ff,
-  #283845ff,
-  #b8b08dff,
-  #f2d492ff,
-  #f29559ff
-);
-$gradient-radial: radial-gradient(
-  #202c39ff,
-  #283845ff,
-  #b8b08dff,
-  #f2d492ff,
-  #f29559ff
-);
+$gradient-top: linear-gradient(0deg, #202c39ff, #283845ff, #b8b08dff, #f2d492ff, #f29559ff);
+$gradient-right: linear-gradient(90deg, #202c39ff, #283845ff, #b8b08dff, #f2d492ff, #f29559ff);
+$gradient-bottom: linear-gradient(180deg, #202c39ff, #283845ff, #b8b08dff, #f2d492ff, #f29559ff);
+$gradient-left: linear-gradient(270deg, #202c39ff, #283845ff, #b8b08dff, #f2d492ff, #f29559ff);
+$gradient-top-right: linear-gradient(45deg, #202c39ff, #283845ff, #b8b08dff, #f2d492ff, #f29559ff);
+$gradient-bottom-right: linear-gradient(135deg, #202c39ff, #283845ff, #b8b08dff, #f2d492ff, #f29559ff);
+$gradient-top-left: linear-gradient(225deg, #202c39ff, #283845ff, #b8b08dff, #f2d492ff, #f29559ff);
+$gradient-bottom-left: linear-gradient(315deg, #202c39ff, #283845ff, #b8b08dff, #f2d492ff, #f29559ff);
+$gradient-radial: radial-gradient(#202c39ff, #283845ff, #b8b08dff, #f2d492ff, #f29559ff);
 
 * {
   font-family: Arial, Helvetica, sans-serif;
   font-family: "Noto Sans", sans-serif;
-  
 }
 
 .container {
@@ -103,8 +40,6 @@ $gradient-radial: radial-gradient(
   grid-template-columns: 1fr 2.5fr 1fr;
   margin: 0;
   background-color: $deep-champagne;
-
-
 
   aside {
     z-index: -100;
@@ -117,41 +52,57 @@ $gradient-radial: radial-gradient(
     top: 0;
     padding: 1rem;
     margin-right: 1rem;
-    box-shadow: 0px 0px 10px $gunmetal ;
-    
+    box-shadow: 0px 0px 10px $gunmetal;
+
     img {
       width: 150px;
     }
 
-
-    header, h1, p {
-    margin: 0%;
-    padding: 0%;
+    header,
+    h1,
+    p {
+      margin: 0%;
+      padding: 0%;
     }
     ul {
       margin: 0;
       padding: 0;
-      
     }
     li {
       text-decoration: none;
       list-style: none;
       padding: 0.5rem;
     }
-
-   
   }
 }
 
+// Left Column
 
-
+.social a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: 0.2rem solid $gunmetal-2;
+  border-radius: 5px;
+  font-size: 2rem;
+  color: $gunmetal-2;
+  margin: 1.5rem 0.75rem 1.5rem;
+  transition: 0.5 ease;
+}
+.social a:hover {
+  background-color: $gunmetal;
+  color: $atomic-tangerine;
+  box-shadow: 0 0 1rem $gunmetal;
+}
 
 main {
   margin: auto;
   max-width: 800px;
   top: 0;
   bottom: 0;
-  
 }
 
 h3 {
@@ -281,15 +232,15 @@ img {
 
 .thirdcolumn {
   z-index: -100;
-    display: grid;
-    align-content: center;
-    justify-items: center;
-    height: 100vh;
-    position: sticky;
-    align-self: start;
-    top: 0;
-    bottom: 0;
-    padding: 1rem;
-    margin-left: 1rem;
-    box-shadow: 0px 0px 10px $gunmetal ;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  height: 100vh;
+  position: sticky;
+  align-self: start;
+  top: 0;
+  bottom: 0;
+  padding: 1rem;
+  margin-left: 1rem;
+  box-shadow: 0px 0px 10px $gunmetal;
 }
