@@ -71,11 +71,11 @@ $gradient-radial: radial-gradient(#202c39ff, #283845ff, #b8b08dff, #f2d492ff, #f
   font-size: 1rem;
   color: $sage;
   letter-spacing: .1rem;
-  transition: .5s ease;
+  transition: 0.5s ease;
 
 }
 
-btn:hover {
+.btn:hover {
   box-shadow: none;
 }
 
