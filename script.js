@@ -1,50 +1,44 @@
-import data from "./jobs.json" assert { type: "json" };
+import data from "./jobs.json" with { type: "json" };
 
-//selecting the HTML elemtent to insert the data
-let jobs = document.getElementById("jobbox");
-//select skills HTML element to inster skill list
-let skills = document.getElementById("skillbox");
-//It asbstract the job section of the json
-let joblist = data.jobs;
-//It abstract the skill section of the json
-let skilllist = data.skills;
-// for (let x in skilllist) {
-// console.log(skills);
+// Wait for DOM to be loaded
+document.addEventListener('DOMContentLoaded', function() {
+  //selecting the HTML element to insert the data
+  let jobs = document.getElementById("jobbox");
+  //select skills HTML element to insert skill list
+  let skills = document.getElementById("skillbox");
+  
+  //It abstracts the job section of the json
+  let joblist = data.jobs;
+  //It abstracts the skill section of the json
+  let skilllist = data.skills;
 
-// console.log(skilllist);
+  console.log("Skills data:", skilllist);
+  console.log("Skills element:", skills);
 
-skilllist.forEach((x) => {
-  skills.innerHTML += `<li>${x}</li>`
-}
-  );
+  // Populate skills
+  if (skilllist && skills) {
+    skilllist.forEach((skill) => {
+      skills.innerHTML += `<li>${skill}</li>`;
+    });
+  }
 
-joblist.forEach((x) => {
-  jobs.innerHTML += `<div class="job">
-  <div class="jobheader">
-   <!-- <img src="" alt="" /> -->
-    <h4>
-      ${x.title}
-      <br />
-      ${x.company}
-      <br />
-      ${x.location}
-      <br />
-      ${x.duration}
-    </h4>
-  </div>
-<!-- <div class="desc">
-      <h4>Description</h4>
-      <p>
-        ${x.description}
-      </p>
-    </div>
-    <div class="tools">
-      <h4>Tools</h4>
-      <ul>
-        <li>${x.tools}</li>
-      </ul>
-  </div> -->
-</div>`;
+  // Populate jobs
+  if (joblist && jobs) {
+    joblist.forEach((job) => {
+      jobs.innerHTML += `<div class="job">
+        <div class="jobheader">
+         <!-- <img src="" alt="" /> -->
+          <h4>
+            ${job.title}
+            <br />
+            ${job.company}
+            <br />
+            ${job.location}
+            <br />
+            ${job.duration}
+          </h4>
+        </div>
+      </div>`;
+    });
+  }
 });
-
-// console.log(jobs);

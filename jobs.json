@@ -1,55 +1,68 @@
 {
   "jobs": [
-    { 
-      "title":"Service Desk Tech II",
+    {
+      "company": "Peak Scientific",
+      "description": "First line of support for all IT related issues.",
+      "duration": "Apr 2024 - Present",
+      "location": "Westford, MA",
+      "logo": "",
+      "title": "IT Service Delivery Specialist",
+      "tools": ["Intune", "Zendesk"]
+    },
+    {
       "company": "Foundation Medicine",
-      "location":"Cambridge, MA",
-      "duration":"Oct 2023 - Present",
-      "description":"First line of support for all IT related issues.",
-      "tools":["ServiceNow", "Confluence", "SCCM"]
-    
-    },
-    {
-      "title":"Service Desk Engineer",
-      "company": "PSM @ IHI",
-      "location":"Boston, MA",
-      "duration":"Jun 2023 - Oct 2023"
-
-    },
-    {
-      "title":"IT Specialist",
-      "company": "Ventus Therapeutics",
-      "location": "Waltham, MA",
-      "duration": "Jul 2022 - Jun 2023"
-    },
-    {
-      "title": "Senior Desktop Support",
-      "company": "Pillar Biosciences",
-      "location": "Natick, MA",
-      "duration": "Feb 2022 - Jun 2022",
-      "description": "",
-      "tools": ["a", "b", "c", "d"],
-      "logo": ""
-    },
-    {
-      "title": "Senior Desktop Support",
-      "company": "Jounce Therapeutics",
+      "description": "First line of support for all IT related issues.",
+      "duration": "Oct 2023 - Feb 2024",
       "location": "Cambridge, MA",
-      "duration": "July 2021 – Feb 2022",
-      "description": "",
-      "tools": ["a"],
-      "logo": ""
+      "logo": "",
+      "title": "Service Desk Tech II",
+      "tools": ["ServiceNow", "Confluence", "SCCM"]
     },
     {
-      "title": "Senior Desktop Support",
-      "company": "Mass General Hospital",
-      "location": "Boston, MA",
-      "duration": "May 2019 - Jul 2021",
+      "company": "PSM @ IHI",
       "description": "",
-      "tools": [],
-      "logo": ""
+      "duration": "Jun 2023 - Oct 2023",
+      "location": "Boston, MA",
+      "logo": "",
+      "title": "Service Desk Engineer",
+      "tools": []
+    },
+    {
+      "company": "Ventus Therapeutics",
+      "description": "",
+      "duration": "Jul 2022 - Jun 2023",
+      "location": "Waltham, MA",
+      "logo": "",
+      "title": "IT Specialist",
+      "tools": []
+    },
+    {
+      "company": "Pillar Biosciences",
+      "description": "",
+      "duration": "Feb 2022 - Jun 2022",
+      "location": "Natick, MA",
+      "logo": "",
+      "title": "Senior Desktop Support",
+      "tools": ["a", "b", "c", "d"]
+    },
+    {
+      "company": "Jounce Therapeutics",
+      "description": "",
+      "duration": "July 2021 – Feb 2022",
+      "location": "Cambridge, MA",
+      "logo": "",
+      "title": "Senior Desktop Support",
+      "tools": ["a"]
+    },
+    {
+      "company": "Mass General Hospital",
+      "description": "",
+      "duration": "May 2019 - Jul 2021",
+      "location": "Boston, MA",
+      "logo": "",
+      "title": "Senior Desktop Support",
+      "tools": []
     }
-  
   ],
   "skills": [
     "Microsoft 365",

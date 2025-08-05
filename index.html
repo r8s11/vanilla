@@ -11,11 +11,13 @@
   <title>Roosevelt Resume</title>
 </head>
 
+
+<!-- MARKER: Body -->
 <body class="container">
   <!-- 
     Sidebar starts
   -->
-  <aside>
+  <div  class="column-1">
     <!-- Photo -->
     <img src="/assets/profile.jpg" alt="Profile Picture">
     <!-- Name -->
@@ -34,11 +36,12 @@
 
     <a href="./Resume 23.12.pdf" download class="btn">Download Resume/CV</a>
 
-  </aside>
+  </div>
   <!-- Sidebar Ends -->
 
   <!-- Main content -->
-  <main>
+  <div class="column-2">
+    <main>
     <div>
       <!-- Summary -->
       <h2>Resume</h2>
@@ -442,7 +445,7 @@
         </div>
       </div>
       <div>
-        <h3>Education</h3>
+        <!-- <h3>Education</h3>
         <div class="education">
           <img src="./assets/MCC-300x300.webp" alt="MMC logo">
           <p>
@@ -450,22 +453,25 @@
             Middlesex Community College
             <br>
             Field of Study: Liberal Arts
-        </div>
+        </div> -->
         </p>
       </div>
     </div>
   </main>
+  </div>
+  <!-- End of Main Content Column -->
+  
   <!-- Third Column -->
   <div class="column-3">
     <!-- Skills -->
-    <div>
+    <section class="skills-section">
       <h3>Skills & Abilities</h3>
       <ul class="skills" id="skillbox">
       </ul>
-    </div>
+    </section>
     <!-- Skill Ends -->
     <!-- Certification -->
-    <div>
+    <section class="certifications">
       <h3>Certifications</h3>
       <div class="certs">
         <p>AWS Certified Cloud Practitioner Dec/2023 - Dec/2026</p>
@@ -476,7 +482,7 @@
         <img src="assets/CompTIA_Security_2Bce.png" alt="">
 
       </div>
-    </div>
+    </section>
     <!-- Certifications End -->
   </div>
   <!-- End of third Column -->

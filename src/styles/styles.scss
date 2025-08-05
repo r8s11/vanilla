@@ -1,106 +1,87 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
 
-$gunmetal: #202c39ff;
-$gunmetal-2: #283845ff;
-$sage: #b8b08dff;
-$deep-champagne: #f2d492ff;
-$atomic-tangerine: #f29559ff;
-
-$gunmetal: hsla(211, 28%, 17%, 1);
-$gunmetal-2: hsla(207, 27%, 21%, 1);
-$sage: hsla(49, 23%, 64%, 1);
-$deep-champagne: hsla(41, 79%, 76%, 1);
-$atomic-tangerine: hsla(24, 85%, 65%, 1);
-
-/* SCSS RGB */
+// Color Variables
 $gunmetal: rgba(32, 44, 57, 1);
 $gunmetal-2: rgba(40, 56, 69, 1);
 $sage: rgba(184, 176, 141, 1);
 $deep-champagne: rgba(242, 212, 146, 1);
 $atomic-tangerine: rgba(242, 149, 89, 1);
 
-/* SCSS Gradient */
+// Gradient Variables
 $gradient-top: linear-gradient(
   0deg,
-  #202c39ff,
-  #283845ff,
-  #b8b08dff,
-  #f2d492ff,
-  #f29559ff
+  $gunmetal,
+  $gunmetal-2,
+  $sage,
+  $deep-champagne,
+  $atomic-tangerine
 );
 $gradient-right: linear-gradient(
   90deg,
-  #202c39ff,
-  #283845ff,
-  #b8b08dff,
-  #f2d492ff,
-  #f29559ff
+  $gunmetal,
+  $gunmetal-2,
+  $sage,
+  $deep-champagne,
+  $atomic-tangerine
 );
 $gradient-bottom: linear-gradient(
   180deg,
-  #202c39ff,
-  #283845ff,
-  #b8b08dff,
-  #f2d492ff,
-  #f29559ff
+  $gunmetal,
+  $gunmetal-2,
+  $sage,
+  $deep-champagne,
+  $atomic-tangerine
 );
 $gradient-left: linear-gradient(
   270deg,
-  #202c39ff,
-  #283845ff,
-  #b8b08dff,
-  #f2d492ff,
-  #f29559ff
+  $gunmetal,
+  $gunmetal-2,
+  $sage,
+  $deep-champagne,
+  $atomic-tangerine
 );
 $gradient-top-right: linear-gradient(
   45deg,
-  #202c39ff,
-  #283845ff,
-  #b8b08dff,
-  #f2d492ff,
-  #f29559ff
+  $gunmetal,
+  $gunmetal-2,
+  $sage,
+  $deep-champagne,
+  $atomic-tangerine
 );
 $gradient-bottom-right: linear-gradient(
   135deg,
-  #202c39ff,
-  #283845ff,
-  #b8b08dff,
-  #f2d492ff,
-  #f29559ff
+  $gunmetal,
+  $gunmetal-2,
+  $sage,
+  $deep-champagne,
+  $atomic-tangerine
 );
 $gradient-top-left: linear-gradient(
   225deg,
-  #202c39ff,
-  #283845ff,
-  #b8b08dff,
-  #f2d492ff,
-  #f29559ff
+  $gunmetal,
+  $gunmetal-2,
+  $sage,
+  $deep-champagne,
+  $atomic-tangerine
 );
 $gradient-bottom-left: linear-gradient(
   315deg,
-  #202c39ff,
-  #283845ff,
-  #b8b08dff,
-  #f2d492ff,
-  #f29559ff
+  $gunmetal,
+  $gunmetal-2,
+  $sage,
+  $deep-champagne,
+  $atomic-tangerine
 );
 $gradient-radial: radial-gradient(
-  #202c39ff,
-  #283845ff,
-  #b8b08dff,
-  #f2d492ff,
-  #f29559ff
+  $gunmetal,
+  $gunmetal-2,
+  $sage,
+  $deep-champagne,
+  $atomic-tangerine
 );
 
 * {
-  font-family: Arial, Helvetica, sans-serif;
-  font-family: "Noto Sans", sans-serif;
-}
-
-.column-1 {
-}
-
-.column-2 {
+  font-family: "Noto Sans", Arial, Helvetica, sans-serif;
 }
 
 .column-3 {
@@ -121,10 +102,6 @@ $gradient-radial: radial-gradient(
     box-shadow: none;
   }
 }
-
-//////////////////////
-// Left Column //////
-/////////////////////
 
 .social a {
   text-decoration: none;
@@ -172,41 +149,40 @@ $gradient-radial: radial-gradient(
   grid-template-columns: 1fr 2.5fr 1fr;
   margin: 0;
   background-color: $deep-champagne;
-
-  aside {
-    display: grid;
-    align-content: center;
-    justify-items: center;
-    height: 100vh;
-    position: sticky;
-    align-self: start;
-    top: 0;
-    padding: 0rem 1rem;
-    margin-right: 1rem;
-    box-shadow: 0px 0px 10px $gunmetal;
-
-    img {
-      width: 150px;
-    }
-
-    header,
-    h1,
-    p {
-      margin: 0%;
-      padding: 0%;
-    }
-    ul {
-      margin: 0;
-      padding: 0;
-    }
-    li {
-      text-decoration: none;
-      list-style: none;
-      padding: 0.5rem;
-    }
-  }
 }
 
+.column-1 {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  height: 100vh;
+  position: sticky;
+  align-self: start;
+  top: 0;
+  padding: 0rem 1rem;
+  margin-right: 1rem;
+  box-shadow: 0px 0px 10px $gunmetal;
+
+  img {
+    width: 150px;
+  }
+
+  header,
+  h1,
+  p {
+    margin: 0%;
+    padding: 0%;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    text-decoration: none;
+    list-style: none;
+    padding: 0.5rem;
+  }
+}
 main {
   margin: auto;
   max-width: 800px;
@@ -225,28 +201,26 @@ h3 {
 .summary,
 .certs,
 .training {
-  background-color: #283845ff;
-  // max-height: 75px;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
-  // padding: 10px;
-  // gap: 10px;
+  background-color: $gunmetal-2;
   color: $deep-champagne;
   box-shadow: 5px 5px 0px grey;
   border-radius: 5px;
-  text-shadow: 3px 3px 3px #202c39ff;
-
+  text-shadow: 3px 3px 3px $gunmetal;
   padding: 10px;
-  border-radius: 5px;
   list-style: none;
+}
+
+.skills-section,
+.certifications {
+  width: 100%;
+  max-width: none;
 }
 
 img {
   height: auto;
   width: 75px;
   border-radius: 5px;
-  box-shadow: 3px 3px 3px #202c39ff;
+  box-shadow: 3px 3px 3px $gunmetal;
 }
 
 .job {
@@ -262,16 +236,15 @@ img {
   }
 
   .jobheader {
-    background-color: #283845ff;
+    background-color: $gunmetal-2;
     max-height: 75px;
     display: flex;
     align-items: center;
-    // justify-content: center;
     padding: 10px;
     gap: 10px;
     box-shadow: 5px 5px 0px grey;
     border-radius: 5px;
-    text-shadow: 3px 3px 3px #202c39ff;
+    text-shadow: 3px 3px 3px $gunmetal;
 
     h4 {
       color: $deep-champagne;
@@ -280,11 +253,9 @@ img {
 
   .jobcontent {
     display: grid;
-    // border-style: dashed;
     grid-template-columns: 1fr minmax(125px, 150px);
     padding: 10px;
     color: $gunmetal-2;
-    // border-radius: 5px;
     font-weight: bold;
 
     h4 {
@@ -298,7 +269,6 @@ img {
     }
 
     .tools {
-      // border-style: dotted;
       min-width: 125px;
 
       li {
@@ -338,6 +308,45 @@ img {
   margin: 10px;
   background-color: $sage;
 }
-
-.thirdcolumn {
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    align-items: center;
+    
+  }
+  .column-1 {
+    padding: 1rem 0rem;
+    position: static;
+    height: auto;
+    margin-right: 0;
+    h1 {
+      justify-self: center;
+    }
+  }
+  .column-2 {
+    position: static;
+    height: auto;
+    margin-left: 0;
+    padding: 0rem 1rem;
+    text-align: center;
+    .jobheader{
+      justify-content: center;
+      text-align: center;
+    }
+    ul {
+       list-style: none;
+       padding: 0;
+    }
+  }
+  .column-3 {
+    .certifications {
+      margin-bottom: 1rem;
+    }
+    position: static;
+    height: auto;
+    margin-left: 0;
+          justify-content: center;
+      text-align: center;
+  }
 }
