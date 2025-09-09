@@ -14,7 +14,7 @@
       "description": "As a key member of the IT support team, I provide first-line assistance for IT services to both employees and the lab, ensuring that all issues are addressed promptly and effectively. My responsibilities include documenting ticket resolutions and escalations, as well as assisting the Service Desk and IT Teams team during major incidents to maintain operational efficiency. I created and supported user accounts, configure laptops, and set up email, printers, and software on end-user devices. Additionally, I provide technical support for audio, visual, and network issues, conduct remote maintenance, and participate in office setups. My commitment to high customer satisfaction is evident through both online and in-person support, where I strive to exceed user expectations.",
       "duration": "Oct 2023 - Feb 2024",
       "location": "Cambridge, MA",
-      "logo": "./assets/Foundation_medicine_logo.svg.png",
+      "logo": "./assets/fmi.png",
       "title": "Service Desk Tech II",
       "tools": ["Confluence", "Duo", "Okta", "SCCM", "ServiceNow", "Smartsheet"]
     },
@@ -23,7 +23,7 @@
       "description": "The role involves the consistent review and assignment of issues submitted to the ConnectWise Service Boards via email, phone calls, or alerts generated from monitoring systems. Additionally, it encompasses providing Level 1 system administration support for essential IT systems, including Active Directory, Office 365, Microsoft Azure, Microsoft Defender, and Microsoft Intune.",
       "duration": "Jun 2023 - Oct 2023",
       "location": "Boston, MA",
-      "logo": "./assets/IHI-logo.png",
+      "logo": "./assets/ihi.png",
       "title": "Service Desk Engineer",
       "tools": ["Active Directory", "ConnectWise", "Microsoft 365", "Microsoft Azure", "Microsoft Defender", "Microsoft Intune"]
     },
