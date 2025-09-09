@@ -162,16 +162,24 @@ img {
   box-shadow: 5px 5px 0px grey;
   border-radius: 5px;
   text-shadow: 3px 3px 3px rgb(32, 44, 57);
+  cursor: pointer;
+
 }
 .job .jobheader h4 {
   color: rgb(242, 212, 146);
 }
+.job .jobheader:hover{
+   box-shadow: none;
+  transition: 0.5s ease;
+  transform: translateY(1px);
+}
 .job .jobcontent {
   display: grid;
-  grid-template-columns: 1fr minmax(125px, 150px);
+  grid-template-columns: 1fr minmax(125px, 170px);
   padding: 10px;
   color: rgb(40, 56, 69);
   font-weight: bold;
+  
 }
 .job .jobcontent h4 {
   display: grid;
@@ -255,5 +263,15 @@ img {
   }
   .column-3 .certifications {
     margin-bottom: 1rem;
+  }
+
+  /* Stack .desc and .tools vertically */
+  .job .jobcontent {
+    grid-template-columns: 1fr;
+    row-gap: 0.75rem;
+  }
+  .job .jobcontent .desc,
+  .job .jobcontent .tools {
+    min-width: 0;
   }
 }/*# sourceMappingURL=styles.css.map */

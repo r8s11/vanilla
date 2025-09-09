@@ -25,20 +25,77 @@ document.addEventListener('DOMContentLoaded', function() {
   // Populate jobs
   if (joblist && jobs) {
     joblist.forEach((job) => {
-      jobs.innerHTML += `<div class="job">
-        <div class="jobheader">
-         <!-- <img src="" alt="" /> -->
+      const wrapper = document.createElement("div");
+      wrapper.className = "job";
+      wrapper.innerHTML = `
+        <div class="jobheader" role="button" tabindex="0" aria-expanded="false" >
+          <img src="${job.logo}" alt="" />
           <h4>
-            ${job.title}
-            <br />
-            ${job.company}
-            <br />
-            ${job.location}
-            <br />
-            ${job.duration}
+        ${job.title}<br />
+        ${job.company}<br />
+        ${job.location}<br />
+        ${job.duration}
           </h4>
         </div>
-      </div>`;
+        <div class="jobbody" aria-hidden="true">
+         <div class="jobcontent">
+          <div class="desc">
+            <h4>Description</h4>
+            <p>${job.description}</p>
+          </div>
+          <div class="tools">
+            <h4>Tools</h4>
+            <ul>
+              ${job.tools.map(tool => `<li>${tool}</li>`).join("")}
+            </ul>
+          </div>
+          </div>
+        </div>
+      `;
+      const header = wrapper.querySelector(".jobheader");
+      const body = wrapper.querySelector(".jobbody");
+
+      // Slide setup
+      body.style.overflow = "hidden";
+      body.style.maxHeight = "0";
+      body.style.transition = "max-height 400ms ease";
+
+      const expand = () => {
+        body.style.maxHeight = body.scrollHeight + "px";
+        header.setAttribute("aria-expanded", "true");
+        body.setAttribute("aria-hidden", "false");
+      };
+
+      const collapse = () => {
+        if (body.style.maxHeight === "none") {
+          body.style.maxHeight = body.scrollHeight + "px";
+          body.offsetHeight; // force reflow
+        }
+        body.style.maxHeight = "0";
+        header.setAttribute("aria-expanded", "false");
+        body.setAttribute("aria-hidden", "true");
+      };
+
+      body.addEventListener("transitionend", (e) => {
+        if (e.propertyName === "max-height" && header.getAttribute("aria-expanded") === "true") {
+          body.style.maxHeight = "none"; // allow dynamic height after opening
+        }
+      });
+
+      const toggle = () => {
+        const expanded = header.getAttribute("aria-expanded") === "true";
+        expanded ? collapse() : (body.style.maxHeight = "0", body.offsetHeight, expand());
+      };
+
+      header.addEventListener("click", toggle);
+      header.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          toggle();
+        }
+      });
+
+      jobs.appendChild(wrapper);
     });
   }
 });
