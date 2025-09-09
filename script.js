@@ -12,8 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
   //It abstracts the skill section of the json
   let skilllist = data.skills;
 
-  console.log("Skills data:", skilllist);
-  console.log("Skills element:", skills);
+
 
   // Populate skills
   if (skilllist && skills) {
