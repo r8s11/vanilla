@@ -2,12 +2,12 @@
   "jobs": [
     {
       "company": "Peak Scientific",
-      "description": "First line of support for all IT related issues.",
+      "description": "As an IT Service Delivery Specialist reporting to the IT Infrastructure Manager, I provided\nTier 1 and Tier 2 support primarily to North American colleagues, while collaborating with global IT teams in India and Europe. My responsibilities included fulfilling service requests and incidents within SLAs, troubleshooting infrastructure and software applications with end-users and business analysts, and managing equipment setups for new employees, including laptops, mobile devices, and printers. I used a combination of Zendesk and Microsoft applications to track requests, incidents, and change requests, ensuring minimal business disruption and traceability. Working as part of a global team, I handled issue handovers across time zones and supported incidents from the global IT queue. I partnered with business, development, and testing teams to deliver tested systems, suggested infrastructure improvements, demonstrated stakeholder management, and showed the ability to work under pressure and maintain attention to detail.",
       "duration": "Apr 2024 - Present",
       "location": "Westford, MA",
       "logo": "./assets/Peak.png",
       "title": "IT Service Delivery Specialist",
-      "tools": ["Intune", "Sophos AV", "Zendesk"]
+      "tools": ["Darktrace","Docker", "Intune", "SAP B1", "Sophos AV", "Zendesk"]
     },
     {
       "company": "Foundation Medicine",
@@ -29,12 +29,12 @@
     },
     {
       "company": "Ventus Therapeutics",
-      "description": "In my role at the Waltham office, I successfully managed the IT inventory and lab equipment, ensuring all resources were utilized efficiently. I played a key role in co-managing our Microsoft 365 tenant alongside our Managed Service Provider, streamlining our operations and enhancing collaboration. I spearheaded the implementation of Jira Service Management, establishing an effective ticketing system that improved our internal communication and issue resolution processes. Additionally, I introduced GitHub Enterprise to optimize our software development and version control efforts. A significant achievement was ensuring that the new Waltham office was fully operational within 24 hours of our move, demonstrating my ability to coordinate complex tasks under tight deadlines. Furthermore, I implemented a centralized SQL server for lab instruments, which enhanced data management and accessibility across the team.",
+      "description": "In my role at the Waltham office, I successfully managed the IT inventory and lab equipment relationships, ensuring all resources were utilized efficiently. I played a key role in co-managing our Microsoft 365 tenant alongside our Managed Service Provider, streamlining our operations and enhancing collaboration. I spearheaded the implementation of Jira Service Management, establishing an effective ticketing system that improved our internal communication and issue resolution processes. Additionally, I introduced GitHub Enterprise to optimize our software development and version control efforts. A significant achievement was ensuring that the new Waltham office was fully operational within 24 hours of our move, demonstrating my ability to coordinate complex tasks under tight deadlines. Furthermore, I implemented a centralized SQL server for lab instruments, which enhanced data management and accessibility across the team.",
       "duration": "Jul 2022 - Jun 2023",
       "location": "Waltham, MA",
       "logo": "./assets/ventus.png",
       "title": "IT Specialist",
-      "tools": ["DattoRMM", "Jira Service Management", "linux", "SQL Server", "Windows"]
+      "tools": ["DattoRMM", "Jira Service Management", "Linux", "SQL Server", "Windows"]
     },
     {
       "company": "Pillar Biosciences",
@@ -61,7 +61,7 @@
       "location": "Boston, MA",
       "logo": "./assets/mgb.png",
       "title": "Senior Desktop Support",
-      "tools": ["Angular","Github","javascript","PHP", "SmartDeploy","Citrix Workspace"]
+      "tools": ["Angular","Github","JavaScript","PHP", "SmartDeploy","Citrix Workspace"]
     }
   ],
   "skills": [

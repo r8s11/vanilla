@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Populate jobs
   if (joblist && jobs) {
-    joblist.forEach((job) => {
+    joblist.forEach((job, index) => {
       const wrapper = document.createElement("div");
       wrapper.className = "job";
       wrapper.innerHTML = `
@@ -95,6 +95,10 @@ document.addEventListener('DOMContentLoaded', function() {
       });
 
       jobs.appendChild(wrapper);
+
+      if (index === 0) {
+        requestAnimationFrame(() => expand()); // Keep the first job expanded on load
+      }
     });
   }
 });
