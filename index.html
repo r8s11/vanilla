@@ -1,144 +1,208 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0E0C0A" />
+    <meta name="description" content="Roosevelt Segura — IT Specialist and Developer based in New York City. Specializing in Microsoft 365, cloud infrastructure, and IT service delivery across biotech and life sciences." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Roosevelt Segura — IT Specialist & Developer" />
+    <meta property="og:description" content="IT Specialist and Developer with 5+ years in biotech and life sciences IT support, Microsoft 365 administration, and cloud infrastructure." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Roosevelt Segura — IT Specialist & Developer" />
+    <meta name="twitter:description" content="IT Specialist and Developer with 5+ years in biotech and life sciences IT support, Microsoft 365 administration, and cloud infrastructure." />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230e0c0a'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' fill='%23e8450a' font-family='sans-serif' font-weight='bold' font-size='13'%3ERS%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles/styles.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script type="module" src="./script.js"></script>
+    <script
+      src="https://app.rybbit.io/api/script.js"
+      data-site-id="f33f413c5cf1"
+      defer
+    ></script>
+    <title>Roosevelt Segura &mdash; IT Specialist &amp; Developer</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/src/styles/styles.css" />
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <script type="module" src="./script.js"></script>
-  <script
-    src="https://app.rybbit.io/api/script.js"
-    data-site-id="f33f413c5cf1"
-    defer
-></script>
-  <title>Roosevelt Resume</title>
-</head>
+  <body class="container">
+    <a class="skip-link" href="#main">Skip to main content</a>
 
-
-<!-- MARKER: Body -->
-<body class="container">
-  <!--
-    Sidebar starts
-  -->
-  <div  class="column-1">
-    <!-- Photo -->
-    <img src="/assets/profile.jpg" alt="Profile Picture">
-    <!-- Name -->
-    <header>
-      <h1>Roosevelt Segura</h1>
-      <p>Senior IT Specialist / Software Developer / Salsero </p>
-    </header>
-    <!-- Options -->
-
-    <!-- Links -->
-    <div class="social">
-      <a href="https://www.linkedin.com/in/rooseveltbsegura"><i class='bx bxl-linkedin'></i></a>
-      <a href="https://www.instagram.com/salsasegura/"><i class='bx bxl-instagram-alt'></i></a>
-    </div>
-    <!-- Download Button -->
-
-    <a href="./Resume2511.pdf" download class="btn">Download Resume/CV</a>
-
-  </div>
-  <!-- Sidebar Ends -->
-
-  <!-- Main content -->
-  <div class="column-2">
-    <main>
-    <div>
-      <!-- Summary -->
-      <h2>Resume</h2>
-      <div>
-        <h3>Summary</h3>
-        <div class="summary" id="summary">
-          <p>
-            Dedicated and experienced IT professional with a proven track record in providing high-quality technical support and solutions. Skilled in troubleshooting a wide range of IT issues, managing IT infrastructure, and ensuring superior customer service. Proficient in cloud computing, Microsoft product administration, and IT service management. Possesses strong communication skills and a commitment to continuous improvement.
+    <!-- Sidebar -->
+    <div class="column-1">
+      <div class="sidebar-inner">
+        <div class="profile-frame">
+          <img
+            src="/assets/profile.jpg"
+            alt="Roosevelt Segura"
+            width="140"
+            height="140"
+            fetchpriority="high"
+          />
+        </div>
+        <header class="sidebar-header">
+          <h1>Roosevelt<br />Segura</h1>
+          <p class="tagline">
+            IT Specialist<span class="sep"> // </span>Dev<span class="sep">
+              // </span
+            >Salsero
           </p>
+        </header>
+        <div class="social">
+          <a
+            href="https://www.linkedin.com/in/rooseveltbsegura"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn profile"
+          >
+            <i class="bx bxl-linkedin" aria-hidden="true"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/salsasegura/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram profile"
+          >
+            <i class="bx bxl-instagram-alt" aria-hidden="true"></i>
+          </a>
         </div>
+        <a href="./Resume2511.pdf" download class="btn">
+          <i class="bx bx-download" aria-hidden="true"></i> Download CV
+        </a>
+        <div class="sidebar-stamp" aria-hidden="true">RS &mdash; 2026</div>
       </div>
-      <!-- Summary Ends -->
+    </div>
 
-      <!-- Job Experience -->
-      <div class="Experience jobs">
-        <h3>Experience</h3>
-        <div class="jobitems" id="jobbox">
-        </div>
-        <!-- Job Experience Ends -->
-      </div>
-      <!-- Trainig Starts -->
-      <div>
-        <h3>Training</h3>
-        <div class="training">
-          <ul>
+    <!-- Main content -->
+    <div class="column-2">
+      <main id="main">
+        <section class="content-block">
+          <h2 class="section-label">
+            <span class="label-num">01</span> Summary
+          </h2>
+          <div class="summary">
+            <p>
+              Dedicated and experienced IT professional with a proven track
+              record in providing high-quality technical support and solutions.
+              Skilled in troubleshooting a wide range of IT issues, managing IT
+              infrastructure, and ensuring superior customer service.
+            </p>
+            <p>
+              Proficient in cloud computing, Microsoft product administration,
+              and IT service management. Possesses strong communication skills
+              and a commitment to continuous improvement.
+            </p>
+          </div>
+        </section>
+
+        <section class="content-block">
+          <h2 class="section-label">
+            <span class="label-num">02</span> Experience
+          </h2>
+          <div id="jobbox"></div>
+        </section>
+
+        <section class="content-block">
+          <h2 class="section-label">
+            <span class="label-num">03</span> Training
+          </h2>
+          <ul class="training-list">
             <li>Windows Server</li>
             <li>Network+</li>
             <li>Security+</li>
             <li>Linux</li>
           </ul>
-        </div>
-      </div>
-      <!-- Training Ends -->
-      <!-- Military -->
-      <div>
-        <h3>Military</h3>
-        <div class="military">
-          <img src="./assets/sealArmy.png" alt="" />
-          <p>
-            21W Carpentry Specialist
-            <br />
-            E-4 Specialist
-            <br />
-            U.S. Army Reserves
-            <br />
-            Mar/2010 - Mar/2018
-          </p>
-          <img src="./assets/e4.png" alt="" />
-        </div>
-      </div>
-      <div>
-        <!-- <h3>Education</h3>
-        <div class="education">
-          <img src="./assets/MCC-300x300.webp" alt="MMC logo">
-          <p>
-            <br>
-            Middlesex Community College
-            <br>
-            Field of Study: Liberal Arts
-        </div> -->
-        </p>
-      </div>
+        </section>
+
+        <section class="content-block">
+          <h2 class="section-label">
+            <span class="label-num">04</span> Military
+          </h2>
+          <div class="military">
+            <img
+              src="./assets/sealArmy.png"
+              alt="U.S. Army seal"
+              width="75"
+              height="75"
+              loading="lazy"
+            />
+            <div class="mil-text">
+              <strong>U.S. Army Reserves</strong>
+              <p>21W Carpentry Specialist</p>
+              <p>E-4 Specialist</p>
+              <p class="mil-dates">Mar 2010 &mdash; Mar 2018</p>
+            </div>
+            <img
+              src="./assets/e4.png"
+              alt="E-4 Specialist rank insignia"
+              width="75"
+              height="75"
+              loading="lazy"
+            />
+          </div>
+        </section>
+      </main>
     </div>
-  </main>
-  </div>
-  <!-- End of Main Content Column -->
 
-  <!-- Third Column -->
-  <div class="column-3">
-    <!-- Skills -->
-    <section class="skills-section">
-      <h3>Skills & Abilities</h3>
-      <ul class="skills" id="skillbox">
-      </ul>
-    </section>
-    <!-- Skill Ends -->
-    <!-- Certification -->
-    <section class="certifications">
-      <h3>Certifications</h3>
-      <div class="certs">
-        <p>AWS Certified Cloud Practitioner Dec/2023 - Dec/2026</p>
-        <img src="assets/AWS.png" alt="aws">
-        <p>Azure Fundamentals May/2021</p>
-        <img src="assets/Azure.png" alt="">
-        <p>CompTIA Security+ CE Apr/2016 – Apr/2019</p>
-        <img src="assets/CompTIA_Security_2Bce.png" alt="">
+    <!-- Right column -->
+    <div class="column-3">
+      <section class="skills-section">
+        <h2 class="section-label"><span class="label-num">Skills</span></h2>
+        <ul class="skills" id="skillbox"></ul>
+      </section>
 
-      </div>
-    </section>
-    <!-- Certifications End -->
-  </div>
-  <!-- End of third Column -->
-
-</body>
-
+      <section class="certifications">
+        <h2 class="section-label"><span class="label-num">Certs</span></h2>
+        <div class="certs">
+          <div class="cert-item">
+            <img
+              src="assets/AWS.png"
+              alt="AWS Certified Cloud Practitioner badge"
+              width="75"
+              height="75"
+              loading="lazy"
+            />
+            <p>
+              AWS Cloud Practitioner<br /><span class="cert-date"
+                >Dec 2023 &ndash; Dec 2026</span
+              >
+            </p>
+          </div>
+          <div class="cert-item">
+            <img
+              src="assets/Azure.png"
+              alt="Microsoft Azure Fundamentals badge"
+              width="75"
+              height="75"
+              loading="lazy"
+            />
+            <p>
+              Azure Fundamentals<br /><span class="cert-date">May 2021</span>
+            </p>
+          </div>
+          <div class="cert-item">
+            <img
+              src="assets/CompTIA_Security_2Bce.png"
+              alt="CompTIA Security+ CE badge"
+              width="75"
+              height="75"
+              loading="lazy"
+            />
+            <p>
+              CompTIA Security+ CE<br /><span class="cert-date"
+                >Apr 2016 &ndash; Apr 2019</span
+              ><span class="cert-expired">Expired</span>
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
 </html>
