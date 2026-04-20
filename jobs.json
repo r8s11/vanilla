@@ -1,18 +1,27 @@
 {
   "jobs": [
     {
+      "company": "Two Sigma",
+      "description": "Deliver on-site hardware deployment and IMAC support for 1,700+ end users at a major quantitative finance firm, managing the full lifecycle from automated PC builds and new hire desk setups to workstation relocations and trader floor support. Maintain SLA-driven Jira ticket queues with detailed documentation, performing diagnostic troubleshooting and network connectivity testing. Provide white-glove, customer-facing technical support at all levels including C-suite, handling walk-up requests, floor walks, and VIP assistance. Manage IT asset inventory across local and global locations, coordinating equipment staging, storage room audits, and hardware preparation for deployments in partnership with Workplace Services and Technology Operations Engineering teams.",
+      "duration": "Feb 2026 - Present",
+      "location": "New York, NY",
+      "logo": "./assets/twosigma.png",
+      "title": "Desktop Support Engineer",
+      "tools": ["Jira", "Windows", "macOS", "Active Directory", "Networking"]
+    },
+    {
       "company": "Peak Scientific",
-      "description": "As an IT Service Delivery Specialist reporting to the IT Infrastructure Manager, I provided\nTier 1 and Tier 2 support primarily to North American colleagues, while collaborating with global IT teams in India and Europe. My responsibilities included fulfilling service requests and incidents within SLAs, troubleshooting infrastructure and software applications with end-users and business analysts, and managing equipment setups for new employees, including laptops, mobile devices, and printers. I used a combination of Zendesk and Microsoft applications to track requests, incidents, and change requests, ensuring minimal business disruption and traceability. Working as part of a global team, I handled issue handovers across time zones and supported incidents from the global IT queue. I partnered with business, development, and testing teams to deliver tested systems, suggested infrastructure improvements, demonstrated stakeholder management, and showed the ability to work under pressure and maintain attention to detail.",
-      "duration": "Apr 2024 - Present",
-      "location": "Westford, MA",
+      "description": "Delivered Tier 1/2 support to 100+ employees across North America, collaborating with global IT teams in India and Europe in a 24/7 support model. Maintained 95%+ SLA compliance, triaging and resolving requests and incidents in Zendesk. Managed complete new-hire setups: laptops, mobile devices, printers, software, and account provisioning. Handled cross-time zone incident handovers, ensuring seamless global coverage and reducing resolution gaps. Analyzed recurring ticket patterns and recommended infrastructure improvements, reducing repeat issues.",
+      "duration": "Apr 2024 - Feb 2026",
+      "location": "Westford, MA (Remote)",
       "logo": "./assets/Peak.png",
       "title": "IT Service Delivery Specialist",
-      "tools": ["Darktrace","Docker", "Intune", "SAP B1", "Sophos AV", "Zendesk"]
+      "tools": ["Darktrace", "Docker", "Intune", "SAP B1", "Sophos AV", "Zendesk"]
     },
     {
       "company": "Foundation Medicine",
-      "description": "As a key member of the IT support team, I provide first-line assistance for IT services to both employees and the lab, ensuring that all issues are addressed promptly and effectively. My responsibilities include documenting ticket resolutions and escalations, as well as assisting the Service Desk and IT Teams team during major incidents to maintain operational efficiency. I created and supported user accounts, configure laptops, and set up email, printers, and software on end-user devices. Additionally, I provide technical support for audio, visual, and network issues, conduct remote maintenance, and participate in office setups. My commitment to high customer satisfaction is evident through both online and in-person support, where I strive to exceed user expectations.",
-      "duration": "Oct 2023 - Feb 2024",
+      "description": "Provided first-line support to 500+ employees and lab staff in a HIPAA-regulated healthcare environment. Played key role during major incidents, executing business continuity procedures to minimize downtime. Onboarded 15+ new hires per month — account creation, laptop configuration, and security compliance. Resolved A/V, network connectivity, VPN, and remote access issues across locations.",
+      "duration": "Oct 2023 - Mar 2024",
       "location": "Cambridge, MA",
       "logo": "./assets/fmi.png",
       "title": "Service Desk Tech II",
@@ -56,23 +65,25 @@
     },
     {
       "company": "Mass General Hospital",
-      "description": "In my role within the Radiation Oncology department, I collaborated on developing a bug tracking web application utilizing various programming languages. I provided desk-side support for both the Radiology department at BWH and Radiation Oncology at MGH, ensuring seamless operations and user satisfaction. Additionally, I played an active role in the Windows 10 upgrade project for the Radiology departments at both institutions, facilitating a smooth transition for all users. Serving as a liaison between enterprise information systems and end-users, I effectively communicated needs and solutions to enhance overall departmental efficiency.",
+      "description": "Key contributor to the OneView Windows 10 upgrade — coordinated migrations for 200+ workstations across BWH and MGH. Co-developed an internal bug-tracking web application using JavaScript and Node.js for Radiation Oncology. Provided desk-side and remote support for Radiology (BWH) and Radiation Oncology (MGH) in a HIPAA-regulated environment.",
       "duration": "May 2019 - Jul 2021",
       "location": "Boston, MA",
       "logo": "./assets/mgb.png",
-      "title": "Senior Desktop Support",
-      "tools": ["Angular","Github","JavaScript","PHP", "SmartDeploy","Citrix Workspace"]
+      "title": "Desktop Support Analyst",
+      "tools": ["Angular", "GitHub", "JavaScript", "Node.js", "SmartDeploy", "Citrix Workspace"]
     }
   ],
   "skills": [
-    "Microsoft 365",
-    "Microsoft Azure",
+    "Microsoft 365 / Azure AD / Intune",
+    "AWS (Cloud Practitioner)",
+    "Active Directory & Group Policy",
     "Jira Service Management",
-    "ServiceNow",
-    "Network Security",
-    "Superior Customer Service",
+    "ServiceNow / Zendesk",
+    "Cisco Meraki / FortiGate / VPN",
+    "CyberArk / Okta / Cortex XDR",
+    "Windows Server / Linux / macOS",
+    "Python / Bash / PowerShell",
     "Web Development",
-    "Powershell Scripting",
-    "Bilingual(English and Spanish)"
+    "Bilingual (English & Spanish)"
   ]
 }
