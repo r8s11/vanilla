@@ -1,18 +1,9 @@
 {
   "jobs": [
     {
-      "company": "Two Sigma",
-      "description": "Deliver on-site hardware deployment and IMAC support for 1,700+ end users at a major quantitative finance firm, managing the full lifecycle from automated PC builds and new hire desk setups to workstation relocations and trader floor support. Maintain SLA-driven Jira ticket queues with detailed documentation, performing diagnostic troubleshooting and network connectivity testing. Provide white-glove, customer-facing technical support at all levels including C-suite, handling walk-up requests, floor walks, and VIP assistance. Manage IT asset inventory across local and global locations, coordinating equipment staging, storage room audits, and hardware preparation for deployments in partnership with Workplace Services and Technology Operations Engineering teams.",
-      "duration": "Feb 2026 - Present",
-      "location": "New York, NY",
-      "logo": "./assets/twosigma.png",
-      "title": "Desktop Support Engineer",
-      "tools": ["Jira", "Windows", "macOS", "Active Directory", "Networking"]
-    },
-    {
       "company": "Peak Scientific",
       "description": "Delivered Tier 1/2 support to 100+ employees across North America, collaborating with global IT teams in India and Europe in a 24/7 support model. Maintained 95%+ SLA compliance, triaging and resolving requests and incidents in Zendesk. Managed complete new-hire setups: laptops, mobile devices, printers, software, and account provisioning. Handled cross-time zone incident handovers, ensuring seamless global coverage and reducing resolution gaps. Analyzed recurring ticket patterns and recommended infrastructure improvements, reducing repeat issues.",
-      "duration": "Apr 2024 - Feb 2026",
+      "duration": "Apr 2024 \u2013 Feb 2026",
       "location": "Westford, MA (Remote)",
       "logo": "./assets/Peak.png",
       "title": "IT Service Delivery Specialist",
@@ -20,53 +11,35 @@
     },
     {
       "company": "Foundation Medicine",
-      "description": "Provided first-line support to 500+ employees and lab staff in a HIPAA-regulated healthcare environment. Played key role during major incidents, executing business continuity procedures to minimize downtime. Onboarded 15+ new hires per month — account creation, laptop configuration, and security compliance. Resolved A/V, network connectivity, VPN, and remote access issues across locations.",
-      "duration": "Oct 2023 - Mar 2024",
-      "location": "Cambridge, MA",
+      "description": "Provided first-line support to 500+ employees and lab staff in a HIPAA-regulated healthcare environment. Played key role during major incidents, executing business continuity procedures to minimize downtime. Onboarded 15+ new hires per month \u2014 account creation, laptop configuration, and security compliance. Resolved A/V, network connectivity, VPN, and remote access issues across locations.",
+      "duration": "Oct 2023 \u2013 Mar 2024",
+      "location": "Cambridge, MA (Contract)",
       "logo": "./assets/fmi.png",
       "title": "Service Desk Tech II",
       "tools": ["Confluence", "Duo", "Okta", "SCCM", "ServiceNow", "Smartsheet"]
     },
     {
-      "company": "PSM @ IHI",
-      "description": "The role involves the consistent review and assignment of issues submitted to the ConnectWise Service Boards via email, phone calls, or alerts generated from monitoring systems. Additionally, it encompasses providing Level 1 system administration support for essential IT systems, including Active Directory, Office 365, Microsoft Azure, Microsoft Defender, and Microsoft Intune.",
-      "duration": "Jun 2023 - Oct 2023",
-      "location": "Boston, MA",
-      "logo": "./assets/ihi.png",
-      "title": "Service Desk Engineer",
-      "tools": ["Active Directory", "ConnectWise", "Microsoft 365", "Microsoft Azure", "Microsoft Defender", "Microsoft Intune"]
-    },
-    {
       "company": "Ventus Therapeutics",
-      "description": "In my role at the Waltham office, I successfully managed the IT inventory and lab equipment relationships, ensuring all resources were utilized efficiently. I played a key role in co-managing our Microsoft 365 tenant alongside our Managed Service Provider, streamlining our operations and enhancing collaboration. I spearheaded the implementation of Jira Service Management, establishing an effective ticketing system that improved our internal communication and issue resolution processes. Additionally, I introduced GitHub Enterprise to optimize our software development and version control efforts. A significant achievement was ensuring that the new Waltham office was fully operational within 24 hours of our move, demonstrating my ability to coordinate complex tasks under tight deadlines. Furthermore, I implemented a centralized SQL server for lab instruments, which enhanced data management and accessibility across the team.",
-      "duration": "Jul 2022 - Jun 2023",
+      "description": "Co-managed the Microsoft 365 tenant for 100+ users \u2014 provisioning, licensing, security, and compliance. Built Jira Service Management from the ground up, formalizing IT support where no system existed. Introduced GitHub Enterprise for the development team, enabling modern version control and collaboration. Established a centralized SQL Server infrastructure for lab data, improving researcher accessibility. Led IT infrastructure setup during office relocation \u2014 zero unplanned downtime.",
+      "duration": "Jul 2022 \u2013 Jun 2023",
       "location": "Waltham, MA",
       "logo": "./assets/ventus.png",
       "title": "IT Specialist",
-      "tools": ["DattoRMM", "Jira Service Management", "Linux", "SQL Server", "Windows"]
-    },
-    {
-      "company": "Pillar Biosciences",
-      "description": "In my role, I focus on enhancing collaboration and communication through the creation of Microsoft 365 Teams and the management of email distribution lists. I also provide support for conference room systems, ensuring smooth operation and troubleshooting any issues that arise. Additionally, I handle the onboarding and offboarding processes for users, facilitating a seamless transition for new and departing team members. My responsibilities further extend to troubleshooting network and VPN issues, utilizing the FortiGate portal to ensure a secure and reliable connectivity experience for all users.",
-      "duration": "Feb 2022 - Jun 2022",
-      "location": "Natick, MA",
-      "logo": "./assets/pillar.png",
-      "title": "Senior Desktop Support",
-      "tools": ["FortiGate"]
+      "tools": ["DattoRMM", "GitHub Enterprise", "Jira Service Management", "SQL Server", "Windows"]
     },
     {
       "company": "Jounce Therapeutics",
-      "description": "In my role, I have been responsible for the creation of virtual machines (VMs) tailored to meet the specific needs of end-users and various business requirements. I have managed Box accounts, ensuring that permissions are appropriately set for the company’s folders to maintain security and accessibility. Additionally, I troubleshoot CyberArk SSO issues to facilitate seamless access for users. My proactive approach includes responding to alerts from Cortex XDR, which helps in identifying and mitigating potential threats swiftly. I also coordinate with vendors to ensure proper maintenance of IT lab equipment, ensuring optimal functionality. Furthermore, I troubleshoot network issues utilizing the Cisco Meraki portal, thus maintaining a robust and reliable network infrastructure.",
-      "duration": "July 2021 – Feb 2022",
-      "location": "Cambridge, MA",
+      "description": "Managed complete user lifecycle: onboarding, provisioning, equipment setup, and secure offboarding. Troubleshot VPN and network connectivity using FortiGate; supported A/V systems for 50+ person events. Created and configured virtual machines for user and business requirements; administered Box cloud storage. Investigated Cortex XDR security alerts and resolved CyberArk SSO issues; managed Cisco Meraki network infrastructure.",
+      "duration": "Jul 2021 \u2013 Jul 2022",
+      "location": "Cambridge, MA (Contract)",
       "logo": "./assets/jounce.jpg",
-      "title": "Senior Desktop Support",
-      "tools": ["Jira Service Management", "CyberArk", "Cortex XDR", "Cisco Meraki", "ManageEngine", "VMware"]
+      "title": "Sr. Desktop Support Specialist",
+      "tools": ["Box", "Cisco Meraki", "CyberArk", "Cortex XDR", "FortiGate", "VMware"]
     },
     {
       "company": "Mass General Hospital",
-      "description": "Key contributor to the OneView Windows 10 upgrade — coordinated migrations for 200+ workstations across BWH and MGH. Co-developed an internal bug-tracking web application using JavaScript and Node.js for Radiation Oncology. Provided desk-side and remote support for Radiology (BWH) and Radiation Oncology (MGH) in a HIPAA-regulated environment.",
-      "duration": "May 2019 - Jul 2021",
+      "description": "Key contributor to the OneView Windows 10 upgrade \u2014 coordinated migrations for 200+ workstations across BWH and MGH. Co-developed an internal bug-tracking web application using JavaScript and Node.js for Radiation Oncology. Provided desk-side and remote support for Radiology (BWH) and Radiation Oncology (MGH) in a HIPAA-regulated environment.",
+      "duration": "May 2019 \u2013 Jul 2021",
       "location": "Boston, MA",
       "logo": "./assets/mgb.png",
       "title": "Desktop Support Analyst",
@@ -75,15 +48,13 @@
   ],
   "skills": [
     "Microsoft 365 / Azure AD / Intune",
-    "AWS (Cloud Practitioner)",
-    "Active Directory & Group Policy",
-    "Jira Service Management",
-    "ServiceNow / Zendesk",
+    "AWS (Cloud Practitioner) / Azure (AZ-900)",
+    "Active Directory / Group Policy / DNS",
+    "Jira / ServiceNow / Zendesk / ConnectWise",
     "Cisco Meraki / FortiGate / VPN",
-    "CyberArk / Okta / Cortex XDR",
-    "Windows Server / Linux / macOS",
-    "Python / Bash / PowerShell",
-    "Web Development",
+    "CyberArk / Okta / Cortex XDR / Defender",
+    "Windows Server / macOS / Linux",
+    "Python / Docker / CI\u2215CD / Terraform",
     "Bilingual (English & Spanish)"
   ]
 }
