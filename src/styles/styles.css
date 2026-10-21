@@ -36,6 +36,12 @@
   --glass-sheen: linear-gradient(180deg, rgba(232, 241, 255, 0.075), rgba(232, 241, 255, 0.012) 42%, rgba(232, 241, 255, 0));
   --glass-highlight: inset 0 1px 0 rgba(232, 241, 255, 0.16);
   --glass-blur: 22px;
+  --light-cobalt: rgba(48, 108, 204, 0.46);
+  --light-teal: rgba(22, 124, 146, 0.36);
+  --light-violet: rgba(78, 66, 168, 0.28);
+  --selection-fill: rgba(245, 242, 236, 0.22);
+  --record-hover: rgba(232, 241, 255, 0.05);
+  --station-shadow: rgba(2, 7, 18, 0.7);
   --tile: #ffffff;
   --font-display: "Yanone Kaffeesatz", "Arial Narrow", sans-serif;
   --font-body: "Archivo", "Helvetica Neue", Arial, sans-serif;
@@ -95,9 +101,9 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(58vmax 44vmax at 6% 4%, rgba(48, 108, 204, 0.46), transparent 70%),
-    radial-gradient(48vmax 40vmax at 98% 92%, rgba(22, 124, 146, 0.36), transparent 70%),
-    radial-gradient(42vmax 34vmax at 56% 52%, rgba(78, 66, 168, 0.28), transparent 72%);
+    radial-gradient(58vmax 44vmax at 6% 4%, var(--light-cobalt), transparent 70%),
+    radial-gradient(48vmax 40vmax at 98% 92%, var(--light-teal), transparent 70%),
+    radial-gradient(42vmax 34vmax at 56% 52%, var(--light-violet), transparent 72%);
 }
 
 img {
@@ -112,7 +118,7 @@ ul {
 }
 
 ::selection {
-  background: rgba(245, 242, 236, 0.22);
+  background: var(--selection-fill);
 }
 
 ::-webkit-scrollbar {
@@ -155,6 +161,19 @@ h3 {
   left: 0.75rem;
 }
 
+/* Announced to assistive tech only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* Index bar */
 .indexbar {
   position: sticky;
@@ -166,12 +185,15 @@ h3 {
   gap: 1rem;
   background: var(--abyss);
   border-bottom: var(--rule-heavy);
-  padding: 0.65rem 1.5rem;
+  padding: 0.65rem min(1.5rem, 24px);
+  min-width: 0;
+  container: navigation / inline-size;
 }
 .section-index {
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem 1.25rem;
+  min-width: 0;
 }
 .section-index a {
   color: var(--paper-ink);
@@ -270,6 +292,7 @@ h3 {
   align-items: stretch;
   max-width: 110rem;
   margin: 0 auto;
+  container: program / inline-size;
 }
 
 /* Identity column — lockup tight, actions grouped, ledger at foot */
@@ -279,6 +302,13 @@ h3 {
   flex-direction: column;
   align-items: flex-start;
   gap: 0;
+}
+.ident,
+.rail,
+.identity-credentials li,
+.cert-item,
+.cert-item p {
+  min-width: 0;
 }
 .ident-stick {
   position: sticky;
@@ -292,6 +322,7 @@ h3 {
   width: 100%;
   padding-bottom: 1.25rem;
   border-bottom: var(--rule);
+  container: identity / inline-size;
 }
 .ident-photo {
   width: 96px;
@@ -304,7 +335,7 @@ h3 {
   font-family: var(--font-display);
   font-weight: 700;
   text-transform: uppercase;
-  font-size: var(--display-xl);
+  font-size: min(var(--display-xl), 29cqi);
   line-height: 0.88;
   letter-spacing: 0.01em;
   margin-bottom: 0.35rem;
@@ -331,6 +362,30 @@ h3 {
   width: 100%;
   margin-bottom: 1.4rem;
 }
+.identity-credentials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 7rem), 1fr));
+  gap: 0.75rem;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.identity-credentials li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--text-micro);
+  font-weight: 600;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.identity-credentials img {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  object-fit: contain;
+  background: var(--tile);
+  padding: 2px;
+}
 .ident-stick .btn-solid {
   margin-bottom: 0.65rem;
 }
@@ -342,9 +397,11 @@ h3 {
 .btn {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: min(0.75rem, 12px);
   width: 100%;
-  padding: 1rem 1.25rem;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  padding: 1rem min(1.25rem, 20px);
   font-family: var(--font-display);
   font-weight: 600;
   font-size: var(--display-s);
@@ -354,8 +411,8 @@ h3 {
   transition: background var(--dur-hover) var(--ease-out), color var(--dur-hover) var(--ease-out), transform var(--dur-press) var(--ease-out);
 }
 .btn svg {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: min(1.25rem, 20px);
+  height: min(1.25rem, 20px);
   fill: currentColor;
   flex-shrink: 0;
 }
@@ -384,6 +441,7 @@ h3 {
 
 .social {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
 }
 .social a {
@@ -425,7 +483,7 @@ h3 {
   font-size: var(--display-m);
   line-height: 1;
   font-variant-numeric: tabular-nums;
-  white-space: nowrap;
+  overflow-wrap: anywhere;
 }
 .proof-counters div:first-child dt {
   color: var(--orange-bright);
@@ -454,6 +512,8 @@ main {
 /* Numbered section bands */
 .band {
   display: flex;
+  flex-wrap: wrap;
+  overflow-wrap: anywhere;
   align-items: baseline;
   gap: 0.9rem;
   font-family: var(--font-display);
@@ -554,7 +614,7 @@ main {
 .station.is-inview .job {
   border-color: var(--paper-ink);
   border-width: 2px;
-  box-shadow: var(--glass-highlight), 0 18px 36px -14px rgba(2, 7, 18, 0.7);
+  box-shadow: var(--glass-highlight), 0 18px 36px -14px var(--station-shadow);
 }
 
 /* Current station — orange header strip over the navy record, one quarter-arc */
@@ -680,7 +740,7 @@ main {
     transition: background-color var(--dur-hover) var(--ease-out);
   }
   .station:not(.current) .jobheader:hover {
-    background-color: rgba(232, 241, 255, 0.05);
+    background-color: var(--record-hover);
   }
   .station:not(.current) .jobheader:hover .toggle-chevron {
     color: var(--paper-ink);
@@ -697,9 +757,14 @@ main {
   overflow: hidden;
   min-height: 0;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.5rem;
   padding: 0 1.25rem 1.25rem;
+}
+.desc,
+.tools {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 /* Description and tech sit side by side only when the record is wide enough
    to keep the description at a readable measure (~50ch+). */
@@ -740,11 +805,6 @@ main {
   font-weight: 600;
   letter-spacing: var(--track-chip);
   text-transform: uppercase;
-  transition: background var(--dur-hover) var(--ease-out), color var(--dur-hover) var(--ease-out);
-}
-.tools li:hover {
-  background: var(--paper-ink);
-  color: var(--abyss);
 }
 
 /* Military */
@@ -761,7 +821,7 @@ main {
 .indexbar,
 .ident-stick,
 .job,
-.rail section[id]:not(#military),
+.rail :where(section[id]:not(#military)),
 .military {
   background-color: var(--glass-fill);
   background-image: var(--glass-sheen);
@@ -775,13 +835,13 @@ main {
   background-color: var(--glass-fill-sticky);
 }
 .ident-stick,
-.rail section[id]:not(#military) {
+.rail :where(section[id]:not(#military)) {
   border: 1px solid var(--glass-edge);
 }
 .ident-stick {
   padding: 1rem;
 }
-.rail section[id]:not(#military) {
+.rail :where(section[id]:not(#military)) {
   padding: 1rem;
 }
 /* No blur engine or the reader asked for less transparency: solid panes. */
@@ -789,7 +849,7 @@ main {
   .indexbar,
   .ident-stick,
   .job,
-  .rail section[id]:not(#military),
+  .rail :where(section[id]:not(#military)),
   .military {
     background-color: var(--glass-fill-solid);
   }
@@ -801,7 +861,7 @@ main {
   .indexbar,
   .ident-stick,
   .job,
-  .rail section[id]:not(#military),
+  .rail :where(section[id]:not(#military)),
   .military {
     background-color: var(--glass-fill-solid);
     -webkit-backdrop-filter: none;
@@ -854,6 +914,8 @@ main {
   font-size: var(--text-body);
 }
 .contact-line a {
+  min-width: 0;
+  overflow-wrap: anywhere;
   color: var(--orange-bright);
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -923,15 +985,6 @@ main {
   padding: 0.7rem 0;
   border-bottom: 1px solid var(--hairline);
 }
-.cert-item img {
-  width: 56px;
-  height: 56px;
-  object-fit: contain;
-  border: var(--rule);
-  padding: 3px;
-  background: var(--tile);
-  flex-shrink: 0;
-}
 .cert-item p {
   font-size: var(--text-small);
   font-weight: 600;
@@ -940,6 +993,7 @@ main {
   font-weight: 500;
   color: var(--gray);
   font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
 }
 .cert-pending,
 .cert-demoted {
@@ -970,7 +1024,9 @@ main {
   text-transform: uppercase;
   padding: 0.15rem 0.5rem;
   margin-left: 0.5rem;
-  white-space: nowrap;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 .cert-expired {
   display: inline-block;
@@ -982,7 +1038,9 @@ main {
   text-transform: uppercase;
   padding: 0.15rem 0.5rem;
   margin-left: 0.5rem;
-  white-space: nowrap;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 .cert-demoted {
   color: var(--gray);
@@ -1051,17 +1109,41 @@ button:focus-visible {
   outline: 3px solid var(--signal-orange);
   outline-offset: 2px;
 }
+.station.current .jobheader:focus-visible {
+  outline-color: var(--abyss);
+  outline-offset: -5px;
+}
 
-/* Responsive */
-@media (max-width: 1100px) {
+/* Browser default text size and text-only enlargement both trigger reflow. */
+@media (max-width: 68.75em) {
   .layout {
     grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  }
+}
+@media (max-width: 53.75em) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-height: 64em) {
+  .ident-stick {
+    position: static;
+  }
+}
+
+/* Responsive */
+@container program (max-width: 68.75rem) {
+  .ident {
+    grid-column: 1;
+  }
+  main {
+    grid-column: 2 / -1;
   }
   .rail {
     grid-column: 1 / -1;
     border-top: var(--rule-heavy);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
     gap: 2rem;
     align-items: start;
   }
@@ -1069,30 +1151,25 @@ button:focus-visible {
     border-right: none;
   }
 }
-@media (max-width: 860px) {
-  /* Single-column stack. main and .rail dissolve so the program reads in one
-     pass — record, proof, service, education — then the funnel. */
+@container program (max-width: 53.75rem) {
+  /* Single-column reading path: identity, summary, credentials, career, notes. */
   main,
   .rail {
     display: contents;
   }
-  .layout {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .indexbar {
-    position: static;
-    flex-wrap: wrap;
-  }
-  .section-index {
-    flex: 1 1 100%;
+  .ident,
+  main > *,
+  .rail > * {
+    grid-column: 1 / -1;
   }
   .ident {
     order: 1;
     position: static;
-    padding: 1.75rem 1.25rem;
+    padding: 1.75rem min(1.25rem, 5vw);
   }
   .ident-stick {
     position: static;
+    padding-inline: min(1rem, 16px);
     padding-bottom: 1.1rem;
   }
   .ident-photo {
@@ -1101,7 +1178,7 @@ button:focus-visible {
     margin-bottom: 0.9rem;
   }
   .ident h1 {
-    font-size: clamp(2.75rem, 15vw, 4.5rem);
+    font-size: min(clamp(2.75rem, 15vw, 4.5rem), 29cqi);
     margin-bottom: 0.25rem;
   }
   .role {
@@ -1118,7 +1195,7 @@ button:focus-visible {
   .proof-counters {
     margin-top: 1.15rem;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 5rem), 1fr));
     gap: 0 0.9rem;
   }
   .proof-counters div {
@@ -1137,16 +1214,16 @@ button:focus-visible {
     order: 2;
   }
   #experience {
-    order: 3;
-  }
-  .restated-cta {
     order: 4;
   }
-  #skills {
+  .restated-cta {
     order: 5;
   }
-  #credentials {
+  #skills {
     order: 6;
+  }
+  #credentials {
+    order: 3;
   }
   #military {
     order: 7;
@@ -1165,42 +1242,61 @@ button:focus-visible {
   #education,
   .restated-cta,
   .narrative-cta {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+    padding-left: min(1.25rem, 5vw);
+    padding-right: min(1.25rem, 5vw);
     margin-bottom: 2.5rem;
   }
   .indexbar,
   .ident-stick,
   .job,
-  .rail section[id]:not(#military),
+  .rail :where(section[id]:not(#military)),
   .military {
     --glass-blur: 14px;
   }
   .station {
-    --step: 0.35rem;
-    padding-left: 1.25rem;
+    --step: min(0.35rem, 6px);
+    padding-left: min(1.25rem, 20px);
   }
-  /* Narrow records: trim inner gutters so descriptions keep ~30ch on phones */
+  /* Keep labels full-width even when the user enlarges text. */
   .jobheader {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: min(0.75rem, 12px);
+    padding-inline: min(1rem, 16px);
+  }
+  .job-title-group {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+  .toggle-chevron {
+    grid-column: 2;
+    grid-row: 1;
+    width: 24px;
+    height: 24px;
   }
   .jobcontent {
-    padding: 0 1rem 1rem;
+    padding: 0 min(1rem, 16px) 1rem;
   }
-  .indexbar-mark {
-    width: 100%;
-    gap: 0.75rem;
-    justify-content: space-between;
+  .jobheader img {
+    width: 36px;
+    height: 36px;
   }
-  .range-track {
-    width: 6rem;
+  .job-title-group .job-meta {
+    overflow-wrap: normal;
+    hyphens: manual;
+    display: flex;
+    flex-direction: column;
   }
-  .jobheader {
-    gap: 0.75rem;
+  .job-meta .sep {
+    display: none;
   }
   .station.current .jobheader {
-    padding-right: 3.5rem;
+    padding-right: min(1rem, 16px);
+  }
+  .station.current .toggle-chevron {
+    color: var(--paper-ink);
+    position: relative;
+    z-index: 1;
   }
   .station.current .jobheader::after {
     width: 4.5rem;
@@ -1210,13 +1306,54 @@ button:focus-visible {
   }
   .job-title-group > * {
     min-width: 0;
-    overflow-wrap: break-word;
+    overflow-wrap: anywhere;
   }
   .military {
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 1rem;
+    padding: min(1rem, 16px);
+  }
+  .mil-text {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    min-width: 0;
+  }
+  .military > img:last-child {
+    justify-self: end;
   }
 }
-@media (max-width: 860px), (pointer: coarse), (any-pointer: coarse) {
+/* Every section stays available in a native swipeable strip. */
+@container navigation (max-width: 53.75rem) {
+  .section-index {
+    flex: 1;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 0.75rem;
+    scroll-padding-inline: 0.25rem;
+    scrollbar-width: thin;
+    touch-action: pan-x pan-y;
+    /* Fade the trailing edge so the strip reads as scrollable rather than
+       as text cut off mid-word. */
+    mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent);
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent);
+  }
+  .section-index a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    min-height: 44px;
+    padding-inline: 0.25rem;
+  }
+  .indexbar-mark {
+    flex: 0 0 auto;
+    min-width: 0;
+  }
+  .range {
+    display: none;
+  }
+}
+@media (max-width: 53.75em), (pointer: coarse), (any-pointer: coarse) {
   .btn,
   .social a,
   .section-index a,
@@ -1262,12 +1399,14 @@ button:focus-visible {
   .btn,
   .copy-btn,
   .toggle-chevron,
-  .narrative-cta {
+  .narrative-cta,
+  .identity-credentials {
     display: none !important;
   }
   .layout {
     display: block;
     max-width: none;
+    container-type: normal;
   }
   .ident,
   main,
@@ -1480,7 +1619,8 @@ button:focus-visible {
 /* Forced colors */
 @media (forced-colors: active) {
   a:focus-visible,
-  button:focus-visible {
+  button:focus-visible,
+  .station.current .jobheader:focus-visible {
     outline: 2px solid ButtonText;
   }
   body::before {

@@ -85,10 +85,17 @@ function initSectionTracking() {
     var atEnd = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
     if (!id && atEnd) {
       // The last sections can never reach the reading line; at the page end
-      // report the furthest section the visitor can see.
+      // report the furthest section the visitor can see. Pick the one lowest
+      // on screen, not the last in SECTION_ORDER — the rail sits beside the
+      // record, so its sections scroll past long before the page ends.
+      var furthest = null;
       sections.forEach(function (el) {
-        if (onScreen(el)) id = el.id;
+        if (!onScreen(el)) return;
+        if (!furthest || el.getBoundingClientRect().top > furthest.getBoundingClientRect().top) {
+          furthest = el;
+        }
       });
+      if (furthest) id = furthest.id;
     }
 
     if (!id) {
@@ -110,7 +117,10 @@ function initSectionTracking() {
         }
       });
 
-      id = mainAtLine || railAtLine || mainAbove || railAbove || SECTION_ORDER[0];
+      // The main column is the record; the rail is a side column whose
+      // sections scroll past early. Prefer the main column so the counter
+      // never flickers to the rail in the gaps between record sections.
+      id = mainAtLine || mainAbove || railAtLine || railAbove || SECTION_ORDER[0];
     }
 
     if (id !== currentId) {
@@ -152,10 +162,16 @@ function initSectionTracking() {
 }
 
 function initScrollReveal() {
-  // The class is set by the inline head script before first paint; without
-  // IntersectionObserver it is never set, so content stays visible.
+  // The inline <head> script owns the js-scrollreveal opt-in and a timed
+  // fallback that shows everything. data-reveal-ready is the handoff: it is
+  // set only after observation is fully wired, so any earlier failure (or a
+  // missing IntersectionObserver) leaves the fallback to reveal the page.
   if (!("IntersectionObserver" in window)) return;
-  document.documentElement.setAttribute("data-reveal-ready", "");
+
+  var LEAD = 80;
+  var targets = Array.prototype.slice.call(
+    document.querySelectorAll(".block, .station")
+  );
 
   var observer = new IntersectionObserver(
     function (entries) {
@@ -166,22 +182,26 @@ function initScrollReveal() {
         }
       });
     },
-    { threshold: 0.05, rootMargin: "0px 0px -10% 0px" }
+    { threshold: 0, rootMargin: "0px 0px " + LEAD + "px 0px" }
   );
-  var targets = document.querySelectorAll(".block, .station");
-  targets.forEach(function (el) {
-    observer.observe(el);
 
-    var rect = el.getBoundingClientRect();
-    var visibleHeight = Math.max(
-      0,
-      Math.min(rect.bottom, window.innerHeight * 0.9) - Math.max(rect.top, 0)
-    );
-    if (rect.height && visibleHeight / rect.height >= 0.05) {
+  // Read every rect first, then write: no layout thrash. Anything already
+  // inside the observer's zone is shown in this same task so it never paints
+  // hidden; the rest is handed to the observer.
+  var limit = window.innerHeight + LEAD;
+  var rects = targets.map(function (el) {
+    return el.getBoundingClientRect();
+  });
+  targets.forEach(function (el, i) {
+    var rect = rects[i];
+    if (rect.height && rect.top <= limit && rect.bottom >= 0) {
       el.classList.add("is-visible");
-      observer.unobserve(el);
+    } else {
+      observer.observe(el);
     }
   });
+
+  document.documentElement.setAttribute("data-reveal-ready", "");
 }
 
 function initStationSpotlight() {
@@ -252,12 +272,15 @@ function initCopyEmail() {
   document.querySelectorAll("[data-copy-email]").forEach(function (btn) {
     var address = btn.getAttribute("data-copy-email");
     var restLabel = btn.textContent;
+    var status = btn.parentElement.querySelector("[data-copy-status]");
     var reset = null;
     var done = function () {
       btn.textContent = "Copied";
+      if (status) status.textContent = address + " copied to clipboard";
       window.clearTimeout(reset);
       reset = window.setTimeout(function () {
         btn.textContent = restLabel;
+        if (status) status.textContent = "";
       }, 2200);
     };
     var legacyCopy = function () {
@@ -299,8 +322,9 @@ function initA11yFixes() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  initSectionTracking();
+  // First: a throw in any later init must not strand hidden reveal targets.
   initScrollReveal();
+  initSectionTracking();
   initStationSpotlight();
   initAccordions();
   initCopyEmail();

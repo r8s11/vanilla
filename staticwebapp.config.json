@@ -1,0 +1,22 @@
+{
+  "routes": [
+    {
+      "route": "/assets/fonts/*.woff2",
+      "headers": {
+        "cache-control": "public, max-age=86400, must-revalidate"
+      }
+    },
+    {
+      "route": "/assets/*.webp",
+      "headers": {
+        "cache-control": "public, max-age=86400, must-revalidate"
+      }
+    },
+    {
+      "route": "/*.pdf",
+      "headers": {
+        "cache-control": "public, max-age=604800, must-revalidate"
+      }
+    }
+  ]
+}
