@@ -2,7 +2,7 @@
 
 # Vanilla JavaScript App
 
-This is my Resume website. This website is made using vanilla js and Sass.
+This is my Resume website. This website is made with vanilla JavaScript and hand-written CSS.
 
 [Azure Static Web Apps](https://docs.microsoft.com/azure/static-web-apps/overview) allows you to easily build JavaScript apps in minutes. Use this repo with the [quickstart](https://docs.microsoft.com/azure/static-web-apps/getting-started?tabs=vanilla-javascript) to build and customize a new static site.
 

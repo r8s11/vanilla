@@ -1,163 +1,308 @@
-import data from "./jobs.json" with { type: "json" };
+// Program wall behavior: index tracking with counter, quiet reveal,
+// station spotlight, accordion. No parallax, no progress chrome —
+// the grid stays still.
+document.documentElement.classList.add("js-accordion");
+
+var SECTION_ORDER = ["summary", "experience", "military", "skills", "credentials", "education"];
+
+function initSectionTracking() {
+  var navLinks = document.querySelectorAll(".section-index a");
+  var counter = document.getElementById("counter-now");
+  if (!navLinks.length) return;
+
+  var sections = SECTION_ORDER.map(function (id) {
+    return document.getElementById(id);
+  }).filter(Boolean);
+
+  var range = document.querySelector(".range");
+  var rangeYear = document.getElementById("range-year");
+  // animation-timeline owns the marker where it exists; JS covers every other
+  // engine so the marker and the year can never drift apart.
+  var cssScrub = !!(window.CSS && window.CSS.supports && window.CSS.supports("animation-timeline: scroll()"));
+
+  var setActive = function (id) {
+    navLinks.forEach(function (link) {
+      var isActive = link.getAttribute("href") === "#" + id;
+      link.classList.toggle("active", isActive);
+      if (isActive) {
+        link.setAttribute("aria-current", "true");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+    if (counter) {
+      var idx = SECTION_ORDER.indexOf(id);
+      counter.textContent = "0" + (idx >= 0 ? idx + 1 : 1);
+    }
+  };
+
+  // Position, not intersection ratios: a section taller than the tracking band
+  // can never satisfy a threshold, which is how the counter used to lie.
+  // One reading line at 35% of the viewport. The main column wins ties, so the
+  // rail only reports when no main section is holding the line.
+  var currentId = null;
+  // A clicked or deep-linked section stays active while it is on screen, so a
+  // short section that cannot scroll to the reading line (Military, Education
+  // near the page end) still reports itself. Released once it leaves view.
+  var pinnedId = SECTION_ORDER.indexOf(location.hash.slice(1)) >= 0 ? location.hash.slice(1) : null;
+  var pinSeen = false;
+  var pin = function (id) {
+    if (SECTION_ORDER.indexOf(id) < 0) return;
+    pinnedId = id;
+    pinSeen = false;
+    // A target already on screen produces no scroll event; re-pick now.
+    schedule();
+  };
+  navLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+      pin(link.getAttribute("href").slice(1));
+    });
+  });
+  window.addEventListener("hashchange", function () {
+    pin(location.hash.slice(1));
+  });
+
+  var onScreen = function (el) {
+    var r = el.getBoundingClientRect();
+    return r.top < window.innerHeight && r.bottom > 0;
+  };
+
+  var pick = function () {
+    var id = null;
+
+    if (pinnedId) {
+      var pinned = document.getElementById(pinnedId);
+      if (pinned && onScreen(pinned)) {
+        pinSeen = true;
+        id = pinnedId;
+      } else if (pinned && !pinSeen) {
+        id = pinnedId; // still travelling toward it
+      } else {
+        pinnedId = null;
+      }
+    }
+
+    var atEnd = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
+    if (!id && atEnd) {
+      // The last sections can never reach the reading line; at the page end
+      // report the furthest section the visitor can see.
+      sections.forEach(function (el) {
+        if (onScreen(el)) id = el.id;
+      });
+    }
+
+    if (!id) {
+      var line = window.innerHeight * 0.35;
+      var mainAtLine = null;
+      var railAtLine = null;
+      var mainAbove = null;
+      var railAbove = null;
+
+      sections.forEach(function (el) {
+        var rect = el.getBoundingClientRect();
+        var inMain = el.closest("main") !== null;
+        if (rect.top <= line && rect.bottom > line) {
+          if (inMain) mainAtLine = el.id;
+          else railAtLine = el.id;
+        } else if (rect.top <= line) {
+          if (inMain) mainAbove = el.id;
+          else railAbove = el.id;
+        }
+      });
+
+      id = mainAtLine || railAtLine || mainAbove || railAbove || SECTION_ORDER[0];
+    }
+
+    if (id !== currentId) {
+      currentId = id;
+      setActive(id);
+    }
+
+    if (range) {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      var scrolled = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+      // The record runs newest-first, so the top of the page is 2026.
+      var progress = 1 - scrolled;
+      if (!cssScrub) {
+        range.style.setProperty("--progress", progress.toFixed(4));
+      }
+      if (rangeYear) {
+        rangeYear.textContent = String(2019 + Math.round(progress * 7));
+      }
+    }
+  };
+
+  var ticking = false;
+  var schedule = function () {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(function () {
+      ticking = false;
+      pick();
+    });
+  };
+
+  window.addEventListener("scroll", schedule, { passive: true });
+  window.addEventListener("resize", schedule);
+  window.addEventListener("load", schedule);
+  if ("ResizeObserver" in window) {
+    new ResizeObserver(schedule).observe(document.body);
+  }
+  pick();
+}
 
 function initScrollReveal() {
-  document.documentElement.classList.add("js-scrollreveal");
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
+  // The class is set by the inline head script before first paint; without
+  // IntersectionObserver it is never set, so content stays visible.
+  if (!("IntersectionObserver" in window)) return;
+  document.documentElement.setAttribute("data-reveal-ready", "");
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add("is-visible");
           observer.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0 }
+    { threshold: 0.05, rootMargin: "0px 0px -10% 0px" }
   );
-  document.querySelectorAll(".content-block").forEach((el) => observer.observe(el));
+  var targets = document.querySelectorAll(".block, .station");
+  targets.forEach(function (el) {
+    observer.observe(el);
+
+    var rect = el.getBoundingClientRect();
+    var visibleHeight = Math.max(
+      0,
+      Math.min(rect.bottom, window.innerHeight * 0.9) - Math.max(rect.top, 0)
+    );
+    if (rect.height && visibleHeight / rect.height >= 0.05) {
+      el.classList.add("is-visible");
+      observer.unobserve(el);
+    }
+  });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Init scroll reveal early so hidden state is set before first paint
-  initScrollReveal();
+function initStationSpotlight() {
+  var stations = document.querySelectorAll("#jobbox .station");
+  if (!stations.length || !("IntersectionObserver" in window)) return;
 
-  const jobbox = document.getElementById("jobbox");
-  const skillbox = document.getElementById("skillbox");
-  const joblist = data?.jobs ?? [];
-  const skilllist = data?.skills ?? [];
-
-  // ── Skills: single batch write ──────────────────────
-  if (skillbox && skilllist.length) {
-    const frag = document.createDocumentFragment();
-    skilllist.forEach((s) => {
-      const li = document.createElement("li");
-      li.textContent = s;
-      frag.appendChild(li);
-    });
-    skillbox.appendChild(frag);
-  }
-
-  // ── Jobs: DOM-built, proper <button> header ──────────
-  if (jobbox && joblist.length) {
-    const frag = document.createDocumentFragment();
-
-    joblist.forEach((job, index) => {
-      const wrapper = document.createElement("div");
-      wrapper.className = "job";
-      wrapper.style.setProperty("--stagger-delay", `${index * 0.07}s`);
-
-      // header button
-      const header = document.createElement("button");
-      header.className = "jobheader";
-      header.type = "button";
-      header.setAttribute("aria-expanded", "false");
-
-      const logo = document.createElement("img");
-      logo.src = job.logo || "";
-      logo.alt = `${job.company || "Company"} logo`;
-      logo.width = 48;
-      logo.height = 48;
-      logo.loading = "lazy";
-
-      const titleGroup = document.createElement("div");
-      titleGroup.className = "job-title-group";
-      const titleEl = document.createElement("h4");
-      titleEl.textContent = job.title || "";
-      const metaEl = document.createElement("div");
-      metaEl.className = "job-meta";
-      const company = document.createElement("span");
-      company.className = "company";
-      company.textContent = job.company || "";
-      const sep1 = document.createElement("span");
-      sep1.className = "sep";
-      sep1.textContent = "·";
-      const location = document.createElement("span");
-      location.className = "location";
-      location.textContent = job.location || "";
-      const sep2 = document.createElement("span");
-      sep2.className = "sep";
-      sep2.textContent = "·";
-      const duration = document.createElement("span");
-      duration.className = "duration";
-      duration.textContent = job.duration || "";
-      metaEl.append(company, sep1, location, sep2, duration);
-      titleGroup.append(titleEl, metaEl);
-
-      const chevron = document.createElement("div");
-      chevron.className = "toggle-chevron";
-      chevron.innerHTML = "&#x25BE;";
-      chevron.setAttribute("aria-hidden", "true");
-
-      header.append(logo, titleGroup, chevron);
-
-      // body
-      const body = document.createElement("div");
-      body.className = "jobbody";
-      body.setAttribute("aria-hidden", "true");
-
-      const content = document.createElement("div");
-      content.className = "jobcontent";
-
-      const desc = document.createElement("div");
-      desc.className = "desc";
-      const descH = document.createElement("h4");
-      descH.textContent = "Description";
-      const descP = document.createElement("p");
-      descP.textContent = job.description || "";
-      desc.append(descH, descP);
-
-      const tools = document.createElement("div");
-      tools.className = "tools";
-      const toolsH = document.createElement("h4");
-      toolsH.textContent = "Tech";
-      const toolsUl = document.createElement("ul");
-      (job.tools || []).forEach((t) => {
-        const li = document.createElement("li");
-        li.textContent = t;
-        toolsUl.appendChild(li);
-      });
-      tools.append(toolsH, toolsUl);
-
-      content.append(desc, tools);
-      body.appendChild(content);
-
-      // toggle
-      const expand = () => {
-        body.style.maxHeight = body.scrollHeight + "px";
-        header.setAttribute("aria-expanded", "true");
-        body.setAttribute("aria-hidden", "false");
-      };
-      const collapse = () => {
-        if (body.style.maxHeight === "none")
-          body.style.maxHeight = body.scrollHeight + "px";
-        requestAnimationFrame(() => {
-          body.style.maxHeight = "0";
-        });
-        header.setAttribute("aria-expanded", "false");
-        body.setAttribute("aria-hidden", "true");
-      };
-      body.addEventListener("transitionend", (e) => {
-        if (
-          e.propertyName === "max-height" &&
-          header.getAttribute("aria-expanded") === "true"
-        )
-          body.style.maxHeight = "none";
-      });
-      header.addEventListener("click", () => {
-        header.getAttribute("aria-expanded") === "true" ? collapse() : expand();
-      });
-      header.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          header.click();
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          stations.forEach(function (station) {
+            station.classList.remove("is-inview");
+          });
+          entry.target.classList.add("is-inview");
         }
       });
+    },
+    { rootMargin: "-35% 0px -45% 0px", threshold: 0.15 }
+  );
 
-      wrapper.append(header, body);
-      frag.appendChild(wrapper);
+  stations.forEach(function (station) {
+    observer.observe(station);
+  });
+}
 
-      if (index === 0) requestAnimationFrame(() => expand());
+function initAccordions() {
+  var jobbox = document.getElementById("jobbox");
+  if (!jobbox) return;
+  var jobs = jobbox.querySelectorAll(".job");
+  if (!jobs.length) return;
+
+  jobs.forEach(function (wrapper, index) {
+    var header = wrapper.querySelector(".jobheader");
+    var body = wrapper.querySelector(".jobbody");
+    if (!header || !body) return;
+
+    var expand = function () {
+      body.classList.add("open");
+      header.setAttribute("aria-expanded", "true");
+      body.setAttribute("aria-hidden", "false");
+      body.removeAttribute("inert");
+    };
+    var collapse = function () {
+      body.classList.remove("open");
+      header.setAttribute("aria-expanded", "false");
+      body.setAttribute("aria-hidden", "true");
+      body.setAttribute("inert", "");
+    };
+    var toggle = function () {
+      var isOpen = header.getAttribute("aria-expanded") === "true";
+      if (isOpen) {
+        collapse();
+      } else {
+        expand();
+      }
+    };
+    header.addEventListener("click", toggle);
+
+    if (index !== 0) {
+      header.setAttribute("aria-expanded", "false");
+      body.setAttribute("aria-hidden", "true");
+      body.setAttribute("inert", "");
+    }
+  });
+}
+
+function initCopyEmail() {
+  document.querySelectorAll("[data-copy-email]").forEach(function (btn) {
+    var address = btn.getAttribute("data-copy-email");
+    var restLabel = btn.textContent;
+    var reset = null;
+    var done = function () {
+      btn.textContent = "Copied";
+      window.clearTimeout(reset);
+      reset = window.setTimeout(function () {
+        btn.textContent = restLabel;
+      }, 2200);
+    };
+    var legacyCopy = function () {
+      var ta = document.createElement("textarea");
+      ta.value = address;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "absolute";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand("copy");
+        done();
+      } catch (err) {
+        /* clipboard blocked — the address is still visible on the page */
+      }
+      document.body.removeChild(ta);
+    };
+    btn.addEventListener("click", function () {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(address).then(done, legacyCopy);
+      } else {
+        legacyCopy();
+      }
     });
+  });
+}
 
-    jobbox.appendChild(frag);
-  }
+function initA11yFixes() {
+  document.querySelectorAll(".sep").forEach(function (el) {
+    el.setAttribute("aria-hidden", "true");
+  });
+
+  document.querySelectorAll("img").forEach(function (img) {
+    img.addEventListener("error", function () {
+      img.style.display = "none";
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  initSectionTracking();
+  initScrollReveal();
+  initStationSpotlight();
+  initAccordions();
+  initCopyEmail();
+  initA11yFixes();
 });

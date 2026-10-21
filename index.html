@@ -3,175 +3,342 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0E0C0A" />
+    <meta name="theme-color" content="#0B1526" />
     <meta
       name="description"
-      content="Roosevelt Segura — IT Engineer based in New York. 7+ years across finance, healthcare, biotech, and scientific organizations. AWS and Azure certified. Building toward DevOps / Cloud."
+      content="Roosevelt Segura — Cloud &amp; DevOps, based in Brooklyn, NY. 10+ years supporting enterprise infrastructure across retail, healthcare, biotech, and scientific organizations. AWS and Azure certified."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Roosevelt Segura — IT Engineer" />
+    <meta property="og:title" content="Roosevelt Segura — Cloud &amp; DevOps" />
     <meta
       property="og:description"
-      content="IT Engineer with 7+ years in enterprise IT across finance, healthcare, biotech, and scientific organizations. AWS and Azure certified."
+      content="Cloud-certified IT professional with 10+ years supporting enterprise infrastructure across retail, healthcare, biotech, and scientific organizations."
     />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Roosevelt Segura — IT Engineer" />
+    <meta name="twitter:title" content="Roosevelt Segura — Cloud &amp; DevOps" />
     <meta
       name="twitter:description"
-      content="IT Engineer with 7+ years in enterprise IT across finance, healthcare, biotech, and scientific organizations. AWS and Azure certified."
+      content="Cloud-certified IT professional with 10+ years supporting enterprise infrastructure across retail, healthcare, biotech, and scientific organizations."
     />
     <link
       rel="icon"
       type="image/svg+xml"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230e0c0a'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' fill='%23e8450a' font-family='sans-serif' font-weight='bold' font-size='13'%3ERS%3C/text%3E%3C/svg%3E"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b1526'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' fill='%23ff7a1a' font-family='sans-serif' font-weight='bold' font-size='13'%3ERS%3C/text%3E%3C/svg%3E"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/src/styles/styles.css" />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
+    <link rel="preload" href="./assets/fonts/yanone-kaffeesatz-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="./assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="./src/styles/styles.css" />
+    <script>
+      // Set before first paint so reveal targets never flash invisible, and
+      // reveal everything if the module script never takes over.
+      if ("IntersectionObserver" in window) {
+        document.documentElement.classList.add("js-scrollreveal");
+        window.setTimeout(function () {
+          if (!document.documentElement.hasAttribute("data-reveal-ready")) {
+            document.querySelectorAll(".block, .station").forEach(function (el) {
+              el.classList.add("is-visible");
+            });
+          }
+        }, 1200);
+      }
+    </script>
     <script type="module" src="./script.js"></script>
-    <script
-      src="https://app.rybbit.io/api/script.js"
-      data-site-id="f33f413c5cf1"
-      defer
-    ></script>
     <script defer src="https://cloud.umami.is/script.js" data-website-id="46b8485d-87f1-428a-be8c-fa7729fe9385"></script>
-    <title>Roosevelt Segura &mdash; IT Engineer</title>
+    <title>Roosevelt Segura &mdash; Cloud &amp; DevOps</title>
   </head>
 
-  <body class="container">
-    <a class="skip-link" href="#main">Skip to main content</a>
+  <body>
+    <a class="skip-link" href="#summary">Skip to main content</a>
 
-    <!-- Sidebar -->
-    <div class="column-1">
-      <div class="sidebar-inner">
-        <div class="profile-frame">
-          <img
-            src="/assets/profile.jpg"
-            alt="Roosevelt Segura"
-            width="140"
-            height="140"
-            fetchpriority="high"
-          />
+    <header class="indexbar">
+      <nav class="section-index" aria-label="On this page">
+        <a href="#summary">Summary</a>
+        <a href="#experience">Experience</a>
+        <a href="#military">Military</a>
+        <a href="#skills">Skills</a>
+        <a href="#credentials">Credentials</a>
+        <a href="#education">Education</a>
+      </nav>
+      <div class="indexbar-mark" aria-hidden="true">
+        <p class="counter"><span id="counter-now">01</span> / 06</p>
+        <div class="range">
+          <span class="range-end">2019</span>
+          <span class="range-track">
+            <span class="range-year" id="range-year">2026</span>
+            <span class="range-marker"></span>
+          </span>
+          <span class="range-end">2026</span>
         </div>
-        <header class="sidebar-header">
-          <h1>Roosevelt<br />Segura</h1>
-          <p class="tagline">
-            IT Engineer<span class="sep"> // </span>Dev<span class="sep">
-              // </span
-            >Salsero
-          </p>
-        </header>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="ident" aria-label="Identity and contact">
+        <div class="ident-stick">
+        <img
+          class="ident-photo"
+          src="./assets/profile.webp"
+          alt="Portrait of Roosevelt Segura"
+          width="96"
+          height="96"
+          fetchpriority="high"
+        />
+        <h1>Roosevelt<br />Segura</h1>
+        <p class="role">Cloud &amp; DevOps</p>
+        <p class="city">Brooklyn, NY</p>
+        <p class="tagline">
+          IT Engineer<span class="sep"> // </span>DevOps<span class="sep"> // </span>Salsero
+        </p>
+        <a href="./resume-2026-10-devops-cloud.pdf" download class="btn btn-solid">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 16 4-5h-3V4h-2v7H8z"/><path d="M20 18H4v-7H2v7c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2v-7h-2v7z"/></svg> Download resume
+        </a>
+        <a href="mailto:mail@roosevelt.info" class="btn btn-outline">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 6.223-8-6.222V6h16zM4 18V9.044l7.386 5.745a.994.994 0 0 0 1.228 0L20 9.044 20.002 18H4z"/></svg> Get in touch
+        </a>
+        <p class="contact-line">
+          <a href="mailto:mail@roosevelt.info">mail@roosevelt.info</a>
+        </p>
         <div class="social">
           <a
-            href="https://www.linkedin.com/in/roosevelt-segura"
+            href="https://www.linkedin.com/in/rooseveltbsegura"
             target="_blank"
             rel="noopener"
             aria-label="LinkedIn profile"
+            title="LinkedIn profile"
           >
-            <i class="bx bxl-linkedin" aria-hidden="true"></i>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="4.983" cy="5.009" r="2.188"/><path d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z"/></svg>
+          </a>
+          <a
+            href="https://github.com/r8s11"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub profile"
+            title="GitHub profile"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z"/></svg>
           </a>
           <a
             href="https://www.instagram.com/salsasegura/"
             target="_blank"
             rel="noopener"
-            aria-label="Instagram profile"
+            aria-label="Instagram (salsa)"
+            title="Instagram (salsa)"
           >
-            <i class="bx bxl-instagram-alt" aria-hidden="true"></i>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.947 8.305a6.53 6.53 0 0 0-.419-2.216 4.61 4.61 0 0 0-2.633-2.633 6.606 6.606 0 0 0-2.186-.42c-.962-.043-1.267-.055-3.709-.055s-2.755 0-3.71.055a6.606 6.606 0 0 0-2.185.42 4.607 4.607 0 0 0-2.633 2.633 6.554 6.554 0 0 0-.419 2.185c-.043.963-.056 1.268-.056 3.71s0 2.754.056 3.71c.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.043 1.268.056 3.71.056s2.755 0 3.71-.056a6.59 6.59 0 0 0 2.186-.419 4.615 4.615 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.187.043-.962.056-1.267.056-3.71-.002-2.442-.002-2.752-.058-3.709zm-8.953 8.297c-2.554 0-4.623-2.069-4.623-4.623s2.069-4.623 4.623-4.623a4.623 4.623 0 0 1 0 9.246zm4.807-8.339a1.077 1.077 0 0 1-1.078-1.078 1.077 1.077 0 1 1 2.155 0c0 .596-.482 1.078-1.077 1.078z"/></svg>
           </a>
         </div>
-        <a href="./resume-2026-04-it-engineer.pdf" download class="btn">
-          <i class="bx bx-download" aria-hidden="true"></i> Download CV
-        </a>
-        <div class="sidebar-stamp" aria-hidden="true">RS &mdash; 2026</div>
-      </div>
-    </div>
+        </div>
+        <dl class="proof-counters">
+          <div><dt>10+ years</dt><dd>Across retail, healthcare, biotech</dd></div>
+          <div><dt>95%+ SLA</dt><dd>24/7 global support model</dd></div>
+          <div><dt>500+ staff</dt><dd>Supported in HIPAA-regulated labs</dd></div>
+        </dl>
+      </aside>
 
-    <!-- Main content -->
-    <div class="column-2">
       <main id="main">
-        <section class="content-block">
-          <h2 class="section-label">
-            <span class="label-num">01</span> Summary
-          </h2>
+        <section class="block" id="summary">
+          <h2 class="band"><span class="band-num">01</span> Summary</h2>
           <div class="summary">
             <p>
-              IT Engineer with 7+ years supporting distributed technical
-              environments across finance, healthcare, biotech, and scientific
-              organizations. Most recently delivered Tier 1/2 support to a 24/7,
-              globally distributed organization across North America, India, and
-              Europe.
+              Cloud-certified IT professional with 10+ years supporting
+              enterprise infrastructure across retail, healthcare, biotech, and
+              scientific organizations. Most recently replaced a manual,
+              spreadsheet-driven PC refresh workflow with a tested JavaScript
+              tracking tool, while deploying 100+ endpoints through Windows
+              Autopilot and Intune.
             </p>
             <p>
-              Strengths in Microsoft 365 administration, IT service management,
-              and infrastructure troubleshooting, with a track record of process
-              improvements that reduce recurring issues. Actively building cloud
-              and automation skills (Azure, Python, Docker) toward a
-              DevOps&nbsp;/ Cloud Engineer focus. AWS Cloud Practitioner and
-              Azure Fundamentals (AZ-900) certified. U.S. Army Reserve veteran.
-              Bilingual English/Spanish.
+              Previously introduced GitHub Enterprise, Jira Service Management,
+              and centralized SQL Server infrastructure where none existed.
+              Building DevOps skills in Python, Docker, CI/CD, and
+              Infrastructure as Code toward a Cloud or DevOps Engineering role.
+              AWS Cloud Practitioner and Azure Fundamentals (AZ-900) certified.
+              U.S. Army Reserve veteran. Bilingual English/Spanish.
             </p>
           </div>
         </section>
 
-        <section class="content-block">
-          <h2 class="section-label">
-            <span class="label-num">02</span> Experience
-          </h2>
-          <div id="jobbox"></div>
+        <section class="block" id="experience">
+          <h2 class="band"><span class="band-num">02</span> Experience</h2>
+          <ol class="spine" id="jobbox">
+            <li class="station current">
+              <article class="job">
+                <h3 class="job-heading">
+                  <button class="jobheader" type="button" aria-controls="jobbody-0" aria-expanded="true">
+                    <span class="job-title-group">
+                      <span class="job-dates">Jun 2026 &ndash; Oct 2026</span>
+                      <span class="job-title">IT Support Technician</span>
+                      <span class="job-meta"><span class="company">Asset Inventories</span><span class="sep">&middot;</span><span class="location">New York, NY (Client: NY Ross Buying Office)</span></span>
+                      <span class="job-proof">Deployed 100+ Windows endpoints and replaced Excel tracking with a tested JavaScript tool.</span>
+                    </span>
+                    <span class="toggle-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"/></svg></span>
+                  </button>
+                </h3>
+                <div class="jobbody open" id="jobbody-0" aria-hidden="false">
+                  <div class="jobcontent">
+                    <div class="desc">
+                      <h4>Description</h4>
+                      <p>Built a browser-based refresh tracker (JavaScript) to replace manual Excel workbooks — barcode serial capture, user-to-device pairing, per-device status pipeline, CSV import/export, and a printable status report, covered by a Node test suite. Deployed 100+ Windows endpoints via Windows Autopilot, imaging, and Intune enrollment for the NY Ross Buying Office computer refresh project. Maintained accurate asset records for every device — serial, assigned user, location, and status — across the refresh lifecycle.</p>
+                    </div>
+                    <div class="tools">
+                      <h4>Tech</h4>
+                      <ul><li>Windows Autopilot</li><li>Intune</li><li>JavaScript</li><li>Node.js</li></ul>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="station">
+              <article class="job">
+                <h3 class="job-heading">
+                  <button class="jobheader" type="button" aria-controls="jobbody-1" aria-expanded="false">
+                    <img src="./assets/Peak.webp" alt="Peak Scientific logo" width="48" height="48" loading="lazy" />
+                    <span class="job-title-group">
+                      <span class="job-dates">Apr 2024 &ndash; Feb 2026</span>
+                      <span class="job-title">IT Service Delivery Specialist</span>
+                      <span class="job-meta"><span class="company">Peak Scientific</span><span class="sep">&middot;</span><span class="location">Westford, MA (Remote)</span></span>
+                      <span class="job-proof">Tier 1/2 support for 200+ staff across 3 regions at 95%+ SLA.</span>
+                    </span>
+                    <span class="toggle-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"/></svg></span>
+                  </button>
+                </h3>
+                <div class="jobbody" id="jobbody-1">
+                  <div class="jobcontent">
+                    <div class="desc">
+                      <h4>Description</h4>
+                      <p>Implemented Apple Business Manager (ABM) integrated with Intune MDM, enabling automated device enrollment (ADE) and zero-touch provisioning across the macOS and iOS fleet — eliminating manual setup steps. Delivered Tier 1/2 support to 200+ employees in a 24/7 model with global IT teams in India and Europe; maintained 95%+ SLA compliance in Zendesk. Partnered with development, QA, and business teams to deliver tested system changes with minimal production impact. Managed new-hire setups: laptops, mobile devices, printers, software, and account provisioning. Analyzed recurring ticket patterns and recommended infrastructure improvements, reducing repeat issues.</p>
+                    </div>
+                    <div class="tools">
+                      <h4>Tech</h4>
+                      <ul><li>Apple Business Manager</li><li>Darktrace</li><li>Docker</li><li>Intune</li><li>SAP B1</li><li>Sophos AV</li><li>Zendesk</li></ul>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="station">
+              <article class="job">
+                <h3 class="job-heading">
+                  <button class="jobheader" type="button" aria-controls="jobbody-2" aria-expanded="false">
+                    <img src="./assets/fmi.webp" alt="Foundation Medicine logo" width="48" height="48" loading="lazy" />
+                    <span class="job-title-group">
+                      <span class="job-dates">Oct 2023 &ndash; Mar 2024</span>
+                      <span class="job-title">Service Desk Tech II</span>
+                      <span class="job-meta"><span class="company">Foundation Medicine</span><span class="sep">&middot;</span><span class="location">Cambridge, MA (Contract)</span></span>
+                      <span class="job-proof">First-line support for 500+ staff in a HIPAA-regulated lab.</span>
+                    </span>
+                    <span class="toggle-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"/></svg></span>
+                  </button>
+                </h3>
+                <div class="jobbody" id="jobbody-2">
+                  <div class="jobcontent">
+                    <div class="desc">
+                      <h4>Description</h4>
+                      <p>Provided first-line support to 500+ employees and lab staff in a HIPAA-regulated healthcare environment. Played key role during major incidents, executing business continuity procedures to minimize downtime. Onboarded 15+ new hires per month — account creation, laptop configuration, and security compliance. Resolved A/V, network connectivity, VPN, and remote access issues across locations.</p>
+                    </div>
+                    <div class="tools">
+                      <h4>Tech</h4>
+                      <ul><li>Confluence</li><li>Duo</li><li>Okta</li><li>SCCM</li><li>ServiceNow</li><li>Smartsheet</li></ul>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="station">
+              <article class="job">
+                <h3 class="job-heading">
+                  <button class="jobheader" type="button" aria-controls="jobbody-3" aria-expanded="false">
+                    <img src="./assets/ventus.webp" alt="Ventus Therapeutics logo" width="48" height="48" loading="lazy" />
+                    <span class="job-title-group">
+                      <span class="job-dates">Jul 2022 &ndash; Jun 2023</span>
+                      <span class="job-title">IT Specialist</span>
+                      <span class="job-meta"><span class="company">Ventus Therapeutics</span><span class="sep">&middot;</span><span class="location">Waltham, MA</span></span>
+                      <span class="job-proof">Implemented Jira Service Management, with workflows and SLAs, where none existed.</span>
+                    </span>
+                    <span class="toggle-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"/></svg></span>
+                  </button>
+                </h3>
+                <div class="jobbody" id="jobbody-3">
+                  <div class="jobcontent">
+                    <div class="desc">
+                      <h4>Description</h4>
+                      <p>Co-managed the Microsoft 365 tenant for 100+ users — provisioning, licensing, security, and compliance. Built Jira Service Management from the ground up — workflows, SLAs, and escalation paths where no system existed. Introduced GitHub Enterprise for the development team — evaluated, procured, and deployed it, establishing branching standards and access controls. Established a centralized SQL Server infrastructure for lab data, improving researcher accessibility. Led IT infrastructure setup during office relocation — zero unplanned downtime.</p>
+                    </div>
+                    <div class="tools">
+                      <h4>Tech</h4>
+                      <ul><li>DattoRMM</li><li>GitHub Enterprise</li><li>Jira Service Management</li><li>SQL Server</li><li>Windows</li></ul>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="station">
+              <article class="job">
+                <h3 class="job-heading">
+                  <button class="jobheader" type="button" aria-controls="jobbody-4" aria-expanded="false">
+                    <img src="./assets/jounce.webp" alt="Jounce Therapeutics logo" width="48" height="48" loading="lazy" />
+                    <span class="job-title-group">
+                      <span class="job-dates">Jul 2021 &ndash; Jul 2022</span>
+                      <span class="job-title">Sr. Desktop Support Specialist</span>
+                      <span class="job-meta"><span class="company">Jounce Therapeutics</span><span class="sep">&middot;</span><span class="location">Cambridge, MA (Contract)</span></span>
+                      <span class="job-proof">Managed hire-to-exit setups and FortiGate remote access.</span>
+                    </span>
+                    <span class="toggle-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"/></svg></span>
+                  </button>
+                </h3>
+                <div class="jobbody" id="jobbody-4">
+                  <div class="jobcontent">
+                    <div class="desc">
+                      <h4>Description</h4>
+                      <p>Managed complete user lifecycle: onboarding, provisioning, equipment setup, and secure offboarding. Troubleshot VPN and network connectivity using FortiGate; supported A/V systems for 50+ person events. Created and configured virtual machines for user and business requirements; administered Box cloud storage. Investigated Cortex XDR security alerts and resolved CyberArk SSO issues; managed Cisco Meraki network infrastructure.</p>
+                    </div>
+                    <div class="tools">
+                      <h4>Tech</h4>
+                      <ul><li>Box</li><li>Cisco Meraki</li><li>CyberArk</li><li>Cortex XDR</li><li>FortiGate</li><li>VMware</li></ul>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="station">
+              <article class="job">
+                <h3 class="job-heading">
+                  <button class="jobheader" type="button" aria-controls="jobbody-5" aria-expanded="false">
+                    <img src="./assets/mgb.webp" alt="Mass General Hospital logo" width="48" height="48" loading="lazy" />
+                    <span class="job-title-group">
+                      <span class="job-dates">May 2019 &ndash; Jul 2021</span>
+                      <span class="job-title">Desktop Support Analyst</span>
+                      <span class="job-meta"><span class="company">Mass General Hospital</span><span class="sep">&middot;</span><span class="location">Boston, MA</span></span>
+                      <span class="job-proof">Windows 10 upgrade across 200+ workstations, plus an internal bug tracker.</span>
+                    </span>
+                    <span class="toggle-chevron" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"/></svg></span>
+                  </button>
+                </h3>
+                <div class="jobbody" id="jobbody-5">
+                  <div class="jobcontent">
+                    <div class="desc">
+                      <h4>Description</h4>
+                      <p>Key contributor to the OneView Windows 10 upgrade — coordinated migrations for 200+ clinical workstations across BWH and MGH. Co-developed an internal bug-tracking web application using JavaScript and Node.js for Radiation Oncology. Provided desk-side and remote support for Radiology (BWH) and Radiation Oncology (MGH) in a HIPAA-regulated environment.</p>
+                    </div>
+                    <div class="tools">
+                      <h4>Tech</h4>
+                      <ul><li>Angular</li><li>GitHub</li><li>JavaScript</li><li>Node.js</li><li>SmartDeploy</li><li>Citrix Workspace</li></ul>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </li>
+          </ol>
+          <a href="./resume-2026-10-devops-cloud.pdf" download class="btn btn-solid restated-cta">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 16 4-5h-3V4h-2v7H8z"/><path d="M20 18H4v-7H2v7c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2v-7h-2v7z"/></svg> Download resume
+          </a>
         </section>
 
-        <section class="content-block">
-          <h2 class="section-label">
-            <span class="label-num">03</span> Projects
-          </h2>
-          <ul class="projects-list">
-            <li>
-              <strong>Jira Service Management Implementation</strong> &mdash;
-              Ventus Therapeutics<br />
-              Built IT ticketing platform from scratch with custom workflows and
-              SLAs
-            </li>
-            <li>
-              <strong>OneView &mdash; Windows 10 Upgrade</strong> &mdash; MGH /
-              BWH Radiology<br />
-              Coordinated OS migration across 200+ workstations
-            </li>
-            <li>
-              <strong>Bug-Tracking Web App</strong> &mdash; Mass General
-              Hospital<br />
-              Co-built an internal tool using JavaScript and Node.js for
-              departmental issue tracking
-            </li>
-          </ul>
-        </section>
-
-        <section class="content-block">
-          <h2 class="section-label">
-            <span class="label-num">04</span> Training
-          </h2>
-          <ul class="training-list">
-            <li>Windows Server</li>
-            <li>Network+</li>
-            <li>Security+</li>
-            <li>Linux</li>
-          </ul>
-        </section>
-
-        <section class="content-block">
-          <h2 class="section-label">
-            <span class="label-num">05</span> Military
-          </h2>
+        <section class="block" id="military">
+          <h2 class="band"><span class="band-num">03</span> Military</h2>
           <div class="military">
             <img
-              src="./assets/sealArmy.png"
+              src="./assets/sealArmy.webp"
               alt="U.S. Army seal"
               width="75"
               height="75"
@@ -181,13 +348,13 @@
               <strong>U.S. Army Reserve</strong>
               <p>12W Carpentry and Masonry</p>
               <p>E-4 Specialist</p>
-              <p class="mil-dates">2010 &mdash; 2018</p>
+              <p class="mil-dates">2010 &ndash; 2018</p>
               <p class="mil-detail">
-                Deployed to Kuwait &mdash; Operation Inherent Resolve
+                Deployed to Kuwait, Operation Inherent Resolve
               </p>
             </div>
             <img
-              src="./assets/e4.png"
+              src="./assets/e4.webp"
               alt="E-4 Specialist rank insignia"
               width="75"
               height="75"
@@ -195,86 +362,114 @@
             />
           </div>
         </section>
+        <div class="narrative-cta">
+          <a href="./resume-2026-10-devops-cloud.pdf" download class="btn btn-solid">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 16 4-5h-3V4h-2v7H8z"/><path d="M20 18H4v-7H2v7c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2v-7h-2v7z"/></svg> Download resume
+          </a>
+          <a href="mailto:mail@roosevelt.info" class="btn btn-outline">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 6.223-8-6.222V6h16zM4 18V9.044l7.386 5.745a.994.994 0 0 0 1.228 0L20 9.044 20.002 18H4z"/></svg> Get in touch
+          </a>
+          <p class="contact-line">
+            <a href="mailto:mail@roosevelt.info">mail@roosevelt.info</a>
+            <button type="button" class="copy-btn" data-copy-email="mail@roosevelt.info">Copy</button>
+          </p>
+        </div>
       </main>
+
+      <aside class="rail" aria-label="Skills, credentials, and education">
+        <section class="skills-section" id="skills">
+          <h2 class="band"><span class="band-num">04</span> Skills</h2>
+          <div class="skills-group">
+            <h3 class="skills-group-label">Cloud &amp; Endpoint</h3>
+            <ul class="skills" id="skillbox">
+              <li>AWS (EC2 / S3 / IAM / VPC)</li>
+              <li>Azure / Microsoft 365 / Entra ID</li>
+              <li>Autopilot / Intune / Apple Business Manager</li>
+            </ul>
+          </div>
+          <div class="skills-group">
+            <h3 class="skills-group-label">Infrastructure &amp; Service</h3>
+            <ul class="skills">
+              <li>Active Directory / Group Policy / DNS / DHCP</li>
+              <li>Windows Server / VMware / SQL Server</li>
+              <li>Jira SM / GitHub Enterprise / Zendesk / ServiceNow</li>
+            </ul>
+          </div>
+          <div class="skills-group">
+            <h3 class="skills-group-label">Security &amp; Code</h3>
+            <ul class="skills">
+              <li>CyberArk / Okta / SAML / Cortex XDR / Defender</li>
+              <li>FortiGate / Cisco Meraki / VPN</li>
+              <li>JavaScript / Node.js / Git / Bash</li>
+              <li>Building: Python / Docker / GitHub Actions / Terraform / Kubernetes</li>
+              <li>Bilingual (English &amp; Spanish)</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="certifications" id="credentials">
+          <h2 class="band"><span class="band-num">05</span> Credentials</h2>
+          <div class="certs">
+            <div class="cert-item">
+              <img
+                src="assets/AWS.webp"
+                alt="AWS Certified Cloud Practitioner badge"
+                width="75"
+                height="75"
+                loading="lazy"
+              />
+              <p>
+                AWS Cloud Practitioner<br /><span class="cert-date"
+                  >Dec 2023 &ndash; Dec 2026</span
+                >
+              </p>
+            </div>
+            <div class="cert-item">
+              <img
+                src="assets/Azure.webp"
+                alt="Microsoft Azure Fundamentals badge"
+                width="75"
+                height="75"
+                loading="lazy"
+              />
+              <p>
+                Azure Fundamentals<br /><span class="cert-date">May 2021</span>
+              </p>
+            </div>
+            <p class="cert-pending">
+              <span class="cert-name">AI-200 Azure AI Cloud Developer Associate</span>
+              <span class="cert-inprogress">In Progress</span>
+            </p>
+            <p class="cert-demoted">
+              <span class="cert-name">CompTIA Security+ CE</span>
+              <span class="cert-date">Apr 2016 &ndash; Apr 2019</span>
+              <span class="cert-expired">Expired</span>
+            </p>
+          </div>
+        </section>
+
+        <section class="education-section" id="education">
+          <h2 class="band"><span class="band-num">06</span> Education</h2>
+          <div class="edu-item">
+            <div class="edu-item-row">
+              <strong>B.S. Computer Science</strong>
+              <span class="cert-date cert-inprogress">In Progress</span>
+            </div>
+            Southern New Hampshire University (SNHU)<br />
+            <span class="cert-date">Apr 2026 &ndash; Present</span>
+          </div>
+          <ul class="training-list">
+            <li>Windows Server</li>
+            <li>Network+</li>
+            <li>Security+</li>
+            <li>Linux</li>
+          </ul>
+        </section>
+      </aside>
     </div>
 
-    <!-- Right column -->
-    <div class="column-3">
-      <section class="skills-section">
-        <h2 class="section-label"><span class="label-num">Skills</span></h2>
-        <ul class="skills" id="skillbox"></ul>
-      </section>
-
-      <section class="certifications">
-        <h2 class="section-label"><span class="label-num">Certs</span></h2>
-        <div class="certs">
-          <div class="cert-item">
-            <img
-              src="assets/AWS.png"
-              alt="AWS Certified Cloud Practitioner badge"
-              width="75"
-              height="75"
-              loading="lazy"
-            />
-            <p>
-              AWS Cloud Practitioner<br /><span class="cert-date"
-                >Dec 2023 &ndash; Dec 2026</span
-              >
-            </p>
-          </div>
-          <div class="cert-item">
-            <img
-              src="assets/Azure.png"
-              alt="Microsoft Azure Fundamentals badge"
-              width="75"
-              height="75"
-              loading="lazy"
-            />
-            <p>
-              Azure Fundamentals<br /><span class="cert-date">May 2021</span>
-            </p>
-          </div>
-          <div class="cert-item">
-            <img
-              src="assets/Azure.png"
-              alt="AZ-204 Azure Developer Associate badge"
-              width="75"
-              height="75"
-              loading="lazy"
-            />
-            <p>
-              AZ-204 Developer Associate<br /><span
-                class="cert-date cert-inprogress"
-                >In Progress</span
-              >
-            </p>
-          </div>
-          <div class="cert-item">
-            <img
-              src="assets/CompTIA_Security_2Bce.png"
-              alt="CompTIA Security+ CE badge"
-              width="75"
-              height="75"
-              loading="lazy"
-            />
-            <p>
-              CompTIA Security+ CE<br /><span class="cert-date"
-                >Apr 2016 &ndash; Apr 2019</span
-              ><span class="cert-expired">Expired</span>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="education-section">
-        <h2 class="section-label"><span class="label-num">Education</span></h2>
-        <div class="edu-item">
-          <strong>B.S. Computer Science</strong>
-          <span class="cert-date cert-inprogress">In Progress</span><br />
-          Southern New Hampshire University (SNHU)<br />
-          <span class="cert-date">Apr 2026 &ndash; Present</span>
-        </div>
-      </section>
-    </div>
+    <footer class="colophon">
+      <p>RS &mdash; 2026</p>
+    </footer>
   </body>
 </html>
