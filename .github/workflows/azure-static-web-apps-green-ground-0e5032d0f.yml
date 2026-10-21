@@ -20,7 +20,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          # This static site has no submodule dependencies; the repository contains an unconfigured gitlink.
           submodules: false
           lfs: false
       - name: Install OIDC Client from Core Package
